@@ -1,13 +1,13 @@
 {
-  "name": "@salesforce/plugin-template",
-  "description": "A template repository for sfdx plugins",
+  "name": "@salesforce/plugin-schema",
+  "description": "Commands to interact with salesforce sobject schemas",
   "version": "1.0.0",
   "author": "Salesforce",
   "bugs": "https://github.com/forcedotcom/cli/issues",
   "dependencies": {
     "@oclif/config": "^1",
     "@salesforce/command": "^3.0.3",
-    "@salesforce/core": "^2.6.0",
+    "@salesforce/core": "^2.14.0",
     "tslib": "^1"
   },
   "devDependencies": {
@@ -53,7 +53,7 @@
     "/messages",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/salesforcecli/plugin-template",
+  "homepage": "https://github.com/salesforcecli/plugin-schema",
   "keywords": [
     "force",
     "salesforce",
@@ -69,12 +69,18 @@
       "@oclif/plugin-help"
     ],
     "topics": {
-      "hello": {
-        "description": "Commands to say hello."
+      "schema": {
+        "description": "List metadata types in your Salesforce org using the CLI",
+        "longDescription": "Use the schema commands to to list metadata types within your Salesforce org using the Salesforce CLI.",
+        "subtopics": {
+          "sobject": {
+            "description": "list standard object metadata types"
+          }
+        }
       }
     }
   },
-  "repository": "salesforcecli/plugin-template",
+  "repository": "salesforcecli/plugin-schema",
   "scripts": {
     "build": "sf-build",
     "clean": "sf-clean",
