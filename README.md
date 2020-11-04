@@ -31,40 +31,75 @@ To verify
 
 ## Commands
 
-- [`sfdx hello:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-helloorg--n-string--f--v-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+- [`sfdx force:schema:sobject:describe -s <string> [-t] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`]
 
-## `sfdx hello:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-print a greeting and your org IDs
+describe an sobject in your org
 
 ```
 USAGE
-  $ sfdx hello:org [-n <string>] [-f] [-v <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel
-  trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ sfdx force:schema:sobject:describe -s <string> [-t] [-u <string>] [--apiversion <string>] [--json]
+  [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
-  -f, --force                                                                       example boolean flag
-  -n, --name=name                                                                   name to print
+  -s, --sobjecttype=sobjecttype                                                     (required) the API name of
+                                                                                    the object to describe
 
-  -u, --targetusername=targetusername                                               username or alias for the target
-                                                                                    org; overrides default target org
+  -t, --usetoolingapi                                                               execute with Tooling API
 
-  -v, --targetdevhubusername=targetdevhubusername                                   username or alias for the dev hub
-                                                                                    org; overrides default dev hub org
+  -u, --targetusername=targetusername                                               username or alias for the
+                                                                                    target org; overrides
+                                                                                    default target org
 
-  --apiversion=apiversion                                                           override the api version used for
-                                                                                    api requests made by this command
+  --apiversion=apiversion                                                           override the api version
+                                                                                    used for api requests made
+                                                                                    by this command
 
   --json                                                                            format output as json
 
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
-                                                                                    this command invocation
+  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging
+                                                                                    level for this command
+                                                                                    invocation
 
-EXAMPLES
-  $ sfdx hello:org --targetusername myOrg@example.com --targetdevhubusername devhub@org.com
-     Hello world! This is org: MyOrg and I will be around until Tue Mar 20 2018!
-     My hub org id is: 00Dxx000000001234
+  Examples:
+      $ sfdx force:schema:sobject:describe -s Account
+      $ sfdx force:schema:sobject:describe -s MyObject__c
+      $ sfdx force:schema:sobject:describe -s ApexClass -t
+```
 
-  $ sfdx hello:org --name myname --targetusername myOrg@example.com
-     Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
+- [`sfdx force:schema:sobject:list -c <string> [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`]
+
+list all objects of a specified category
+
+```
+USAGE
+  $ sfdx force:schema:sobject:list -c <string> [-u <string>] [--apiversion <string>] [--json] [--loglevel
+  trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+OPTIONS
+  -c, --sobjecttypecategory=sobjecttypecategory                                     (required) the type of
+                                                                                    objects to list
+                                                                                    (all|custom|standard)
+
+  -u, --targetusername=targetusername                                               username or alias for the
+                                                                                    target org; overrides
+                                                                                    default target org
+
+  --apiversion=apiversion                                                           override the api version
+                                                                                    used for api requests made
+                                                                                    by this command
+
+  --json                                                                            format output as json
+
+  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging
+                                                                                    level for this command
+                                                                                    invocation
+
+  Lists all objects, custom objects, or standard objects in the org.
+
+  Examples:
+      $ sfdx force:schema:sobject:list -c all
+      $ sfdx force:schema:sobject:list -c custom
+      $ sfdx force:schema:sobject:list -c standard
+
+
 ```
