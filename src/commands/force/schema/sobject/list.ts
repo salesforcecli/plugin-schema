@@ -12,7 +12,8 @@ import { DescribeGlobalSObjectResult, DescribeGlobalResult } from 'jsforce';
 Messages.importMessagesDirectory(__dirname);
 const messages = Messages.loadMessages('@salesforce/plugin-schema', 'list');
 
-export enum Type {
+// eslint-disable-next-line no-shadow
+export enum SObjectType {
   ALL,
   STANDARD,
   CUSTOM,
@@ -39,9 +40,8 @@ export class SchemaSobjectList extends SfdxCommand {
   public static readonly requiresUsername = true;
 
   public async run(): Promise<string[]> {
-    let type = this.flags.sobjecttypecategory;
-
-    type = Type[type.toUpperCase()];
+    const category = (this.flags.sobjecttypecategory as string).toUpperCase() as keyof typeof SObjectType;
+    const type = SObjectType[category];
 
     const typeDescriptions: string[] = [];
 
@@ -52,7 +52,10 @@ export class SchemaSobjectList extends SfdxCommand {
 
     allDescriptions.sobjects.forEach((sobject: DescribeGlobalSObjectResult) => {
       const isCustom = sobject.custom === true;
-      const doPrint = type === Type.ALL || (type === Type.CUSTOM && isCustom) || (type === Type.STANDARD && !isCustom);
+      const doPrint =
+        type === SObjectType.ALL ||
+        (type === SObjectType.CUSTOM && isCustom) ||
+        (type === SObjectType.STANDARD && !isCustom);
       if (doPrint) {
         havePrinted = true;
         this.ux.log(sobject.name);
@@ -61,7 +64,7 @@ export class SchemaSobjectList extends SfdxCommand {
     });
 
     if (!havePrinted) {
-      this.ux.log(messages.getMessage('noTypeFound', [Type[type]]));
+      this.ux.log(messages.getMessage('noTypeFound', [SObjectType[type]]));
     }
 
     return typeDescriptions;
