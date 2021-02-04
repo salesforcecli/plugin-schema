@@ -12,8 +12,10 @@
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",
+    "@oclif/plugin-command-snapshot": "^2.0.0",
     "@salesforce/dev-config": "^2.1.0",
     "@salesforce/dev-scripts": "0.7.0",
+    "@salesforce/plugin-command-reference": "^1.3.0",
     "@salesforce/prettier-config": "^0.0.1",
     "@salesforce/ts-sinon": "1.3.0",
     "@typescript-eslint/eslint-plugin": "^4.2.0",
@@ -66,15 +68,22 @@
     "commands": "./lib/commands",
     "bin": "sfdx",
     "devPlugins": [
-      "@oclif/plugin-help"
+      "@oclif/plugin-help",
+      "@oclif/plugin-command-snapshot",
+      "@salesforce/plugin-command-reference"
     ],
     "topics": {
-      "schema": {
-        "description": "List metadata types in your Salesforce org using the CLI",
-        "longDescription": "Use the schema commands to to list metadata types within your Salesforce org using the Salesforce CLI.",
+      "force": {
+        "external": true,
         "subtopics": {
-          "sobject": {
-            "description": "list standard object metadata types"
+          "schema": {
+            "description": "List metadata types in your Salesforce org using the CLI",
+            "longDescription": "Use the schema commands to to list metadata types within your Salesforce org using the Salesforce CLI.",
+            "subtopics": {
+              "sobject": {
+                "description": "list standard object metadata types"
+              }
+            }
           }
         }
       }
@@ -91,12 +100,14 @@
     "format": "sf-format",
     "lint": "sf-lint",
     "postpack": "shx rm -f oclif.manifest.json",
-    "posttest": "yarn lint",
+    "posttest": "yarn lint && yarn test:deprecation-policy && yarn test:command-reference",
     "prepack": "sf-build",
     "prepare": "sf-install",
     "pretest": "sf-compile-test",
     "test": "sf-test",
-    "version": "oclif-dev readme && git add README.md"
+    "version": "oclif-dev readme && git add README.md",
+    "test:deprecation-policy": "./bin/run snapshot:compare",
+    "test:command-reference": "./bin/run commandreference:generate --erroronwarnings"
   },
   "husky": {
     "hooks": {

@@ -1,0 +1,25 @@
+[
+    {
+        "command": "force:schema:sobject:describe",
+        "plugin": "@salesforce/plugin-schema",
+        "flags": [
+            "apiversion",
+            "json",
+            "loglevel",
+            "sobjecttype",
+            "targetusername",
+            "usetoolingapi"
+        ]
+    },
+    {
+        "command": "force:schema:sobject:list",
+        "plugin": "@salesforce/plugin-schema",
+        "flags": [
+            "apiversion",
+            "json",
+            "loglevel",
+            "sobjecttypecategory",
+            "targetusername"
+        ]
+    }
+]
