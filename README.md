@@ -1,5 +1,7 @@
 # plugin-schema
 
+[![NPM](https://img.shields.io/npm/v/@salesforce/plugin-schema.svg?label=@salesforce/plugin-schema)](https://www.npmjs.com/package/@salesforce/plugin-schema) [![CircleCI](https://circleci.com/gh/salesforcecli/plugin-schema/tree/main.svg?style=shield)](https://circleci.com/gh/salesforcecli/plugin-schema/tree/main) [![Downloads/week](https://img.shields.io/npm/dw/@salesforce/plugin-schema.svg)](https://npmjs.org/package/@salesforce/plugin-schema) [![License](https://img.shields.io/badge/License-BSD%203--Clause-brightgreen.svg)](https://raw.githubusercontent.com/salesforcecli/plugin-schema/main/LICENSE.txt)
+
 Commands to interact with salesforce sobject schemas
 
 This plugin is bundled with the [Salesforce CLI](https://developer.salesforce.com/tools/sfdxcli). For more information on the CLI, read the [getting started guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm).
