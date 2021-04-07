@@ -47,6 +47,7 @@ workflows:
           filters:
             branches:
               only: main
+    when: << pipeline.parameters.run-auto-workflows >>
   test-ts-update:
     triggers:
       - schedule:
