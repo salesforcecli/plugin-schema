@@ -4,7 +4,7 @@
  * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
-import * as os from 'os';
+import { EOL } from 'os';
 import { flags, FlagsConfig, SfdxCommand } from '@salesforce/command';
 import { Connection, Messages, SfdxError } from '@salesforce/core';
 import { DescribeGlobalSObjectResult, DescribeGlobalResult } from 'jsforce';
@@ -21,7 +21,7 @@ export enum SObjectType {
 
 export class SchemaSobjectList extends SfdxCommand {
   public static readonly description = messages.getMessage('description');
-  public static readonly examples = messages.getMessage('examples').split(os.EOL);
+  public static readonly examples = messages.getMessage('examples').split(EOL);
   public static readonly flagsConfig: FlagsConfig = {
     sobjecttypecategory: flags.string({
       char: 'c',
