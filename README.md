@@ -77,6 +77,8 @@ sfdx plugins
 displays the metadata for a standard or custom object
 
 ```
+displays the metadata for a standard or custom object
+
 USAGE
   $ sfdx force:schema:sobject:describe -s <string> [-t] [-u <string>] [--apiversion <string>] [--json] [--loglevel 
   trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
@@ -104,13 +106,15 @@ EXAMPLES
   sfdx force:schema:sobject:describe -s ApexClass -t
 ```
 
-_See code: [src/commands/force/schema/sobject/describe.ts](https://github.com/salesforcecli/plugin-schema/blob/v1.0.8/src/commands/force/schema/sobject/describe.ts)_
+_See code: [src/commands/force/schema/sobject/describe.ts](https://github.com/salesforcecli/plugin-schema/blob/v1.0.10/src/commands/force/schema/sobject/describe.ts)_
 
 ## `sfdx force:schema:sobject:list [-c <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 list all objects of a specified category
 
 ```
+list all objects of a specified category
+
 USAGE
   $ sfdx force:schema:sobject:list [-c <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel 
   trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
@@ -136,5 +140,5 @@ EXAMPLES
   sfdx force:schema:sobject:list -c standard
 ```
 
-_See code: [src/commands/force/schema/sobject/list.ts](https://github.com/salesforcecli/plugin-schema/blob/v1.0.8/src/commands/force/schema/sobject/list.ts)_
+_See code: [src/commands/force/schema/sobject/list.ts](https://github.com/salesforcecli/plugin-schema/blob/v1.0.10/src/commands/force/schema/sobject/list.ts)_
 <!-- commandsstop -->
