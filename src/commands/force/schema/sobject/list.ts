@@ -6,8 +6,8 @@
  */
 import { EOL } from 'os';
 import { flags, FlagsConfig, SfdxCommand } from '@salesforce/command';
-import { Connection, Messages, SfdxError } from '@salesforce/core';
-import { DescribeGlobalSObjectResult, DescribeGlobalResult } from 'jsforce';
+import { Connection, Messages } from '@salesforce/core';
+import { DescribeSObjectResult, DescribeGlobalResult } from 'jsforce';
 
 Messages.importMessagesDirectory(__dirname);
 const messages = Messages.loadMessages('@salesforce/plugin-schema', 'list');
@@ -30,7 +30,7 @@ export class SchemaSobjectList extends SfdxCommand {
         const capitalized = val.toUpperCase();
         const result = capitalized === 'ALL' || capitalized === 'STANDARD' || capitalized === 'CUSTOM';
         if (!result) {
-          throw SfdxError.create('@salesforce/plugin-schema', 'list', 'flags.invalidTypeError');
+          throw messages.createError('flags.invalidTypeError');
         }
         return result;
       },
@@ -50,7 +50,7 @@ export class SchemaSobjectList extends SfdxCommand {
 
     let havePrinted = false;
 
-    allDescriptions.sobjects.forEach((sobject: DescribeGlobalSObjectResult) => {
+    allDescriptions.sobjects.forEach((sobject: DescribeSObjectResult) => {
       const isCustom = sobject.custom === true;
       const doPrint =
         type === SObjectType.ALL ||

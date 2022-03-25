@@ -14,7 +14,7 @@ describe('force:schema:sobject:list', function (): void {
   const errorMessage = 'describeGlobal query failed';
   const expected = { actionOverrides: [], activateable: false, associateEntityType: null, associateParentEntity: null };
   async function prepareStubs(queryThrows = false, useTooling = false) {
-    $$.SANDBOX.stub(Org.prototype, 'getConnection').callsFake(() => Connection.prototype);
+    $$.SANDBOX.stub(Org.prototype, 'getConnection').returns(Connection.prototype);
 
     if (useTooling) {
       const testConnectionOptions = { loginUrl: 'connectionTest/loginUrl' };
