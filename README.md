@@ -69,76 +69,75 @@ sfdx plugins
 ## Commands
 
 <!-- commands -->
-* [`sfdx force:schema:sobject:describe -s <string> [-t] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-forceschemasobjectdescribe--s-string--t--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx force:schema:sobject:list [-c <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-forceschemasobjectlist--c-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+
+- [`sfdx force:schema:sobject:describe -s <string> [-t] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-forceschemasobjectdescribe--s-string--t--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+- [`sfdx force:schema:sobject:list [-c <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-forceschemasobjectlist--c-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 
 ## `sfdx force:schema:sobject:describe -s <string> [-t] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 displays the metadata for a standard or custom object
 
 ```
-displays the metadata for a standard or custom object
-
 USAGE
-  $ sfdx force:schema:sobject:describe -s <string> [-t] [-u <string>] [--apiversion <string>] [--json] [--loglevel 
-  trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ sfdx force:schema:sobject:describe -s <string> [-t] [-u <string>] [--apiversion <string>] [--json] [--loglevel
+    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
-OPTIONS
-  -s, --sobjecttype=sobjecttype                                                     (required) the API name of the
+FLAGS
+  -s, --sobjecttype=<value>                                                         (required) the API name of the
                                                                                     object to describe
-
   -t, --usetoolingapi                                                               execute with Tooling API
-
-  -u, --targetusername=targetusername                                               username or alias for the target
+  -u, --targetusername=<value>                                                      username or alias for the target
                                                                                     org; overrides default target org
-
-  --apiversion=apiversion                                                           override the api version used for
+  --apiversion=<value>                                                              override the api version used for
                                                                                     api requests made by this command
-
   --json                                                                            format output as json
-
   --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
                                                                                     this command invocation
 
+DESCRIPTION
+  displays the metadata for a standard or custom object
+
 EXAMPLES
-  sfdx force:schema:sobject:describe -s Account
-  sfdx force:schema:sobject:describe -s MyObject__c
-  sfdx force:schema:sobject:describe -s ApexClass -t
+  $ sfdx force:schema:sobject:describe -s Account
+
+  $ sfdx force:schema:sobject:describe -s MyObject__c
+
+  $ sfdx force:schema:sobject:describe -s ApexClass -t
 ```
 
-_See code: [src/commands/force/schema/sobject/describe.ts](https://github.com/salesforcecli/plugin-schema/blob/v1.0.10/src/commands/force/schema/sobject/describe.ts)_
+_See code: [src/commands/force/schema/sobject/describe.ts](https://github.com/salesforcecli/plugin-schema/blob/v2.0.0/src/commands/force/schema/sobject/describe.ts)_
 
 ## `sfdx force:schema:sobject:list [-c <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 list all objects of a specified category
 
 ```
-list all objects of a specified category
-
 USAGE
-  $ sfdx force:schema:sobject:list [-c <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel 
-  trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ sfdx force:schema:sobject:list [-c <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel
+    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
-OPTIONS
-  -c, --sobjecttypecategory=sobjecttypecategory                                     [default: ALL] the type of objects
+FLAGS
+  -c, --sobjecttypecategory=<value>                                                 [default: ALL] the type of objects
                                                                                     to list (all|custom|standard)
-
-  -u, --targetusername=targetusername                                               username or alias for the target
+  -u, --targetusername=<value>                                                      username or alias for the target
                                                                                     org; overrides default target org
-
-  --apiversion=apiversion                                                           override the api version used for
+  --apiversion=<value>                                                              override the api version used for
                                                                                     api requests made by this command
-
   --json                                                                            format output as json
-
   --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
                                                                                     this command invocation
 
+DESCRIPTION
+  list all objects of a specified category
+
 EXAMPLES
-  sfdx force:schema:sobject:list -c all
-  sfdx force:schema:sobject:list -c custom
-  sfdx force:schema:sobject:list -c standard
+  $ sfdx force:schema:sobject:list -c all
+
+  $ sfdx force:schema:sobject:list -c custom
+
+  $ sfdx force:schema:sobject:list -c standard
 ```
 
-_See code: [src/commands/force/schema/sobject/list.ts](https://github.com/salesforcecli/plugin-schema/blob/v1.0.10/src/commands/force/schema/sobject/list.ts)_
+_See code: [src/commands/force/schema/sobject/list.ts](https://github.com/salesforcecli/plugin-schema/blob/v2.0.0/src/commands/force/schema/sobject/list.ts)_
+
 <!-- commandsstop -->
