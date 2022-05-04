@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/salesforcecli/plugin-schema/compare/v2.0.0...v2.1.0) (2022-05-04)
+
+### Features
+
+- bump schema validation ([78dcffc](https://github.com/salesforcecli/plugin-schema/commit/78dcffc9945a9f15f8a9740f8d8c1257166b97ba))
+
 ## [2.0.0](https://github.com/salesforcecli/plugin-schema/compare/v1.1.0...v2.0.0) (2022-04-06)
 
 ### Bug Fixes
