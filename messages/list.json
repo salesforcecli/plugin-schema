@@ -5,9 +5,9 @@
     "invalidTypeError": "\"Type\" flag can be set only to <all|custom|standard>."
   },
   "examples": [
-    "sfdx force:schema:sobject:list -c all",
-    "sfdx force:schema:sobject:list -c custom",
-    "sfdx force:schema:sobject:list -c standard"
+    "$ sfdx force:schema:sobject:list -c all",
+    "$ sfdx force:schema:sobject:list -c custom",
+    "$ sfdx force:schema:sobject:list -c standard"
   ],
   "noTypeFound": "No %s objects found."
 }
