@@ -105,7 +105,7 @@ EXAMPLES
   $ sfdx force:schema:sobject:describe -s ApexClass -t
 ```
 
-_See code: [src/commands/force/schema/sobject/describe.ts](https://github.com/salesforcecli/plugin-schema/blob/v2.0.0/src/commands/force/schema/sobject/describe.ts)_
+_See code: [src/commands/force/schema/sobject/describe.ts](https://github.com/salesforcecli/plugin-schema/blob/v2.1.0/src/commands/force/schema/sobject/describe.ts)_
 
 ## `sfdx force:schema:sobject:list [-c <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -138,6 +138,6 @@ EXAMPLES
   $ sfdx force:schema:sobject:list -c standard
 ```
 
-_See code: [src/commands/force/schema/sobject/list.ts](https://github.com/salesforcecli/plugin-schema/blob/v2.0.0/src/commands/force/schema/sobject/list.ts)_
+_See code: [src/commands/force/schema/sobject/list.ts](https://github.com/salesforcecli/plugin-schema/blob/v2.1.0/src/commands/force/schema/sobject/list.ts)_
 
 <!-- commandsstop -->
