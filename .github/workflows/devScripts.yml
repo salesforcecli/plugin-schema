@@ -2,7 +2,7 @@ name: devScripts
 on:
   workflow_dispatch:
   schedule:
-    - cron: '50 6 * * 7'
+    - cron: '50 6 * * 0'
 
 jobs:
   update:
