@@ -10,7 +10,7 @@ import { Connection, Org } from '@salesforce/core';
 import { $$, test, expect } from '@salesforce/command/lib/test';
 import { stubMethod } from '@salesforce/ts-sinon';
 
-describe('force:schema:sobject:list', function (): void {
+describe('force:schema:sobject:list', (): void => {
   const errorMessage = 'describeGlobal query failed';
   function prepareStubs(queryThrows = false) {
     stubMethod($$.SANDBOX, Org.prototype, 'getConnection').callsFake(() => Connection.prototype);
@@ -37,7 +37,7 @@ describe('force:schema:sobject:list', function (): void {
       });
   });
 
-  it('Should throw on a describe by type request error', async function (): Promise<void> {
+  it('Should throw on a describe by type request error', async (): Promise<void> => {
     test
       .do(() => prepareStubs(true))
       .stdout()

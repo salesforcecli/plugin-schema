@@ -10,7 +10,7 @@ import { AuthInfo, Connection, Org } from '@salesforce/core';
 import { stubMethod } from '@salesforce/ts-sinon';
 import { $$, test, expect } from '@salesforce/command/lib/test';
 
-describe('force:schema:sobject:list', function (): void {
+describe('force:schema:sobject:list', (): void => {
   const errorMessage = 'describeGlobal query failed';
   const expected = { actionOverrides: [], activateable: false, associateEntityType: null, associateParentEntity: null };
   async function prepareStubs(queryThrows = false, useTooling = false) {
@@ -30,13 +30,11 @@ describe('force:schema:sobject:list', function (): void {
       } else {
         stubMethod($$.SANDBOX, conn.tooling, 'describe').resolves(expected);
       }
-    } else {
-      if (queryThrows) {
+    } else if (queryThrows) {
         stubMethod($$.SANDBOX, Connection.prototype, 'describeGlobal').throws(errorMessage);
       } else {
         stubMethod($$.SANDBOX, Connection.prototype, 'describeGlobal').resolves(expected);
       }
-    }
   }
 
   it('logs types correctly with no errors and standard api', () => {
