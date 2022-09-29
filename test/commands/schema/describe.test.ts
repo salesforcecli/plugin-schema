@@ -14,6 +14,7 @@ describe('force:schema:sobject:list', (): void => {
   const errorMessage = 'describeGlobal query failed';
   const expected = { actionOverrides: [], activateable: false, associateEntityType: null, associateParentEntity: null };
   async function prepareStubs(queryThrows = false, useTooling = false) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     $$.SANDBOX.stub(Org.prototype, 'getConnection').returns(Connection.prototype);
 
     if (useTooling) {
@@ -31,10 +32,10 @@ describe('force:schema:sobject:list', (): void => {
         stubMethod($$.SANDBOX, conn.tooling, 'describe').resolves(expected);
       }
     } else if (queryThrows) {
-        stubMethod($$.SANDBOX, Connection.prototype, 'describeGlobal').throws(errorMessage);
-      } else {
-        stubMethod($$.SANDBOX, Connection.prototype, 'describeGlobal').resolves(expected);
-      }
+      stubMethod($$.SANDBOX, Connection.prototype, 'describeGlobal').throws(errorMessage);
+    } else {
+      stubMethod($$.SANDBOX, Connection.prototype, 'describeGlobal').resolves(expected);
+    }
   }
 
   it('logs types correctly with no errors and standard api', () => {

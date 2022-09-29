@@ -32,8 +32,8 @@ export class SchemaSObjectDescribe extends SfdxCommand {
   public async run(): Promise<DescribeSObjectResult> {
     const conn: Connection = this.org.getConnection();
     const description: DescribeSObjectResult = this.flags.usetoolingapi
-      ? await conn.tooling.describe(this.flags.sobjecttype)
-      : await conn.describe(this.flags.sobjecttype);
+      ? await conn.tooling.describe(this.flags.sobjecttype as string)
+      : await conn.describe(this.flags.sobjecttype as string);
 
     if (!this.flags.json) {
       this.ux.logJson(description);
