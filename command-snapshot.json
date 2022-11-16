@@ -2,13 +2,13 @@
   {
     "command": "force:schema:sobject:describe",
     "plugin": "@salesforce/plugin-schema",
-    "flags": ["apiversion", "json", "loglevel", "sobjecttype", "targetusername", "usetoolingapi"],
+    "flags": ["json", "sobject", "target-org", "tooling-api"],
     "alias": []
   },
   {
     "command": "force:schema:sobject:list",
     "plugin": "@salesforce/plugin-schema",
-    "flags": ["apiversion", "json", "loglevel", "sobjecttypecategory", "targetusername"],
+    "flags": ["json", "sobject", "target-org"],
     "alias": []
   }
 ]

@@ -5,38 +5,47 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import * as os from 'os';
-import { flags, FlagsConfig, SfdxCommand } from '@salesforce/command';
-import { Connection, Messages } from '@salesforce/core';
+import { CliUx } from '@oclif/core';
+import { SfCommand, Flags } from '@salesforce/sf-plugins-core';
+import { Messages } from '@salesforce/core';
 import { DescribeSObjectResult } from 'jsforce';
 
 Messages.importMessagesDirectory(__dirname);
 const messages = Messages.loadMessages('@salesforce/plugin-schema', 'describe');
 
-export class SchemaSObjectDescribe extends SfdxCommand {
+export class SchemaSObjectDescribe extends SfCommand<DescribeSObjectResult> {
+  public static readonly summary = messages.getMessage('summary');
   public static readonly description = messages.getMessage('description');
-  public static readonly examples = messages.getMessage('examples').split(os.EOL);
-  public static readonly flagsConfig: FlagsConfig = {
-    sobjecttype: flags.string({
+  public static readonly examples = messages.getMessages('examples');
+  public static flags = {
+    'target-org': Flags.requiredOrg({
+      char: 'o',
+      summary: messages.getMessage('flags.target-org.summary'),
+      aliases: ['targetusername', 'u'],
+    }),
+    sobject: Flags.string({
       char: 's',
       required: true,
-      description: messages.getMessage('flags.objectType'),
+      description: messages.getMessage('flags.sobject.summary'),
+      aliases: ['sobjecttype'],
     }),
-    usetoolingapi: flags.boolean({
-      char: 't',
-      description: messages.getMessage('flags.useTooling'),
+    'tooling-api': Flags.boolean({
+      description: messages.getMessage('flags.tooling-api.summary'),
+      aliases: ['usetoolingapi', 't'],
     }),
   };
 
-  public static readonly requiresUsername = true;
   public async run(): Promise<DescribeSObjectResult> {
-    const conn: Connection = this.org.getConnection();
-    const description: DescribeSObjectResult = this.flags.usetoolingapi
-      ? await conn.tooling.describe(this.flags.sobjecttype as string)
-      : await conn.describe(this.flags.sobjecttype as string);
+    const { flags } = await this.parse(SchemaSObjectDescribe);
+    const conn = flags['target-org'].getConnection();
 
-    if (!this.flags.json) {
-      this.ux.logJson(description);
+    // TODO: improve error msg object name is wrong/doesn't exists.
+    const description = flags.usetoolingapi
+      ? await conn.tooling.describe(flags.sobject)
+      : await conn.describe(flags.sobject);
+
+    if (!flags.json) {
+      CliUx.ux.styledJSON(description);
     }
 
     return description;

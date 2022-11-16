@@ -4,53 +4,51 @@
  * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
-import { EOL } from 'os';
-import { flags, FlagsConfig, SfdxCommand } from '@salesforce/command';
-import { Connection, Messages } from '@salesforce/core';
-import { DescribeSObjectResult, DescribeGlobalResult } from 'jsforce';
+import { SfCommand, Flags } from '@salesforce/sf-plugins-core';
+import { Messages } from '@salesforce/core';
 
 Messages.importMessagesDirectory(__dirname);
 const messages = Messages.loadMessages('@salesforce/plugin-schema', 'list');
 
-// eslint-disable-next-line no-shadow
 export enum SObjectType {
   ALL,
   STANDARD,
   CUSTOM,
 }
 
-export class SchemaSobjectList extends SfdxCommand {
+export class SchemaSobjectList extends SfCommand<string[]> {
+  public static readonly summary = messages.getMessage('summary');
   public static readonly description = messages.getMessage('description');
-  public static readonly examples = messages.getMessage('examples').split(EOL);
-  public static readonly flagsConfig: FlagsConfig = {
-    sobjecttypecategory: flags.string({
-      char: 'c',
+  public static readonly examples = messages.getMessages('examples');
+  public static flags = {
+    'target-org': Flags.requiredOrg({
+      char: 'o',
+      required: true,
+      summary: messages.getMessage('flags.target-org.summary'),
+      aliases: ['targetusername', 'u'],
+    }),
+    sobject: Flags.enum({
+      char: 's',
+      options: ['all', 'standard', 'custom', 'ALL', 'STANDARD', 'CUSTOM'],
       default: 'ALL',
-      validate: (val) => {
-        const capitalized = val.toUpperCase();
-        const result = capitalized === 'ALL' || capitalized === 'STANDARD' || capitalized === 'CUSTOM';
-        if (!result) {
-          throw messages.createError('flags.invalidTypeError');
-        }
-        return result;
-      },
-      description: messages.getMessage('flags.typeDescription'),
+      description: messages.getMessage('flags.sobject.summary'),
+      aliases: ['sobjecttypecategory', 'c'],
     }),
   };
-  public static readonly requiresUsername = true;
 
   public async run(): Promise<string[]> {
-    const category = (this.flags.sobjecttypecategory as string).toUpperCase() as keyof typeof SObjectType;
+    const { flags } = await this.parse(SchemaSobjectList);
+
+    const category = flags.sobject.toUpperCase() as keyof typeof SObjectType;
     const type = SObjectType[category];
 
     const typeDescriptions: string[] = [];
 
-    const conn: Connection = this.org.getConnection();
-    const allDescriptions: DescribeGlobalResult = await conn.describeGlobal();
+    const allDescriptions = await flags['target-org'].getConnection().describeGlobal();
 
     let havePrinted = false;
 
-    allDescriptions.sobjects.forEach((sobject: DescribeSObjectResult) => {
+    for (const sobject of allDescriptions.sobjects) {
       const isCustom = sobject.custom === true;
       const doPrint =
         type === SObjectType.ALL ||
@@ -58,13 +56,13 @@ export class SchemaSobjectList extends SfdxCommand {
         (type === SObjectType.STANDARD && !isCustom);
       if (doPrint) {
         havePrinted = true;
-        this.ux.log(sobject.name);
+        this.log(sobject.name);
         typeDescriptions.push(sobject.name);
       }
-    });
+    }
 
     if (!havePrinted) {
-      this.ux.log(messages.getMessage('noTypeFound', [SObjectType[type]]));
+      this.log(messages.getMessage('noTypeFound', [SObjectType[type]]));
     }
 
     return typeDescriptions;
