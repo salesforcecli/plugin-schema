@@ -26,6 +26,7 @@ export class SchemaSobjectList extends SfCommand<string[]> {
   public static readonly summary = messages.getMessage('summary');
   public static readonly description = messages.getMessage('description');
   public static readonly examples = messages.getMessages('examples');
+  public static readonly aliases = ['force:schema:sobject:list'];
   public static flags = {
     'target-org': requiredOrgFlagWithDeprecations,
     'api-version': orgApiVersionFlagWithDeprecations,
