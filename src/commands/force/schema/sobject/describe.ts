@@ -6,7 +6,13 @@
  */
 
 import { CliUx } from '@oclif/core';
-import { SfCommand, Flags } from '@salesforce/sf-plugins-core';
+import {
+  SfCommand,
+  Flags,
+  orgApiVersionFlagWithDeprecations,
+  requiredOrgFlagWithDeprecations,
+  loglevel,
+} from '@salesforce/sf-plugins-core';
 import { Messages } from '@salesforce/core';
 import { DescribeSObjectResult } from 'jsforce';
 
@@ -18,11 +24,9 @@ export class SchemaSObjectDescribe extends SfCommand<DescribeSObjectResult> {
   public static readonly description = messages.getMessage('description');
   public static readonly examples = messages.getMessages('examples');
   public static flags = {
-    'target-org': Flags.requiredOrg({
-      char: 'o',
-      summary: messages.getMessage('flags.target-org.summary'),
-      aliases: ['targetusername', 'u'],
-    }),
+    'target-org': requiredOrgFlagWithDeprecations,
+    'api-version': orgApiVersionFlagWithDeprecations,
+    loglevel,
     sobject: Flags.string({
       char: 's',
       required: true,
@@ -37,7 +41,7 @@ export class SchemaSObjectDescribe extends SfCommand<DescribeSObjectResult> {
 
   public async run(): Promise<DescribeSObjectResult> {
     const { flags } = await this.parse(SchemaSObjectDescribe);
-    const conn = flags['target-org'].getConnection();
+    const conn = flags['target-org'].getConnection(flags['api-version']);
 
     // TODO: improve error msg object name is wrong/doesn't exists.
     const description = flags.usetoolingapi

@@ -4,7 +4,13 @@
  * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
-import { SfCommand, Flags } from '@salesforce/sf-plugins-core';
+import {
+  SfCommand,
+  Flags,
+  orgApiVersionFlagWithDeprecations,
+  requiredOrgFlagWithDeprecations,
+  loglevel,
+} from '@salesforce/sf-plugins-core';
 import { Messages } from '@salesforce/core';
 
 Messages.importMessagesDirectory(__dirname);
@@ -21,12 +27,9 @@ export class SchemaSobjectList extends SfCommand<string[]> {
   public static readonly description = messages.getMessage('description');
   public static readonly examples = messages.getMessages('examples');
   public static flags = {
-    'target-org': Flags.requiredOrg({
-      char: 'o',
-      required: true,
-      summary: messages.getMessage('flags.target-org.summary'),
-      aliases: ['targetusername', 'u'],
-    }),
+    'target-org': requiredOrgFlagWithDeprecations,
+    'api-version': orgApiVersionFlagWithDeprecations,
+    loglevel,
     sobject: Flags.enum({
       char: 's',
       options: ['all', 'standard', 'custom', 'ALL', 'STANDARD', 'CUSTOM'],
@@ -44,7 +47,7 @@ export class SchemaSobjectList extends SfCommand<string[]> {
 
     const typeDescriptions: string[] = [];
 
-    const allDescriptions = await flags['target-org'].getConnection().describeGlobal();
+    const allDescriptions = await flags['target-org'].getConnection(flags['api-version']).describeGlobal();
 
     let havePrinted = false;
 
