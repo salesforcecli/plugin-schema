@@ -35,7 +35,7 @@ export class SObjectList extends SfCommand<string[]> {
       char: 's',
       options: ['all', 'standard', 'custom', 'ALL', 'STANDARD', 'CUSTOM'],
       default: 'ALL',
-      description: messages.getMessage('flags.sobject.summary'),
+      summary: messages.getMessage('flags.sobject.summary'),
       aliases: ['sobjecttypecategory', 'c'],
     }),
   };

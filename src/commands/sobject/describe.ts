@@ -31,11 +31,11 @@ export class SObjectDescribe extends SfCommand<DescribeSObjectResult> {
     sobject: Flags.string({
       char: 's',
       required: true,
-      description: messages.getMessage('flags.sobject.summary'),
+      summary: messages.getMessage('flags.sobject.summary'),
       aliases: ['sobjecttype'],
     }),
     'tooling-api': Flags.boolean({
-      description: messages.getMessage('flags.tooling-api.summary'),
+      summary: messages.getMessage('flags.tooling-api.summary'),
       aliases: ['usetoolingapi', 't'],
     }),
   };
