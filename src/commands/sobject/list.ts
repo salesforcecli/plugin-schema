@@ -22,7 +22,7 @@ export enum SObjectType {
   CUSTOM,
 }
 
-export class SchemaSobjectList extends SfCommand<string[]> {
+export class SObjectList extends SfCommand<string[]> {
   public static readonly summary = messages.getMessage('summary');
   public static readonly description = messages.getMessage('description');
   public static readonly examples = messages.getMessages('examples');
@@ -41,7 +41,7 @@ export class SchemaSobjectList extends SfCommand<string[]> {
   };
 
   public async run(): Promise<string[]> {
-    const { flags } = await this.parse(SchemaSobjectList);
+    const { flags } = await this.parse(SObjectList);
 
     const category = flags.sobject.toUpperCase() as keyof typeof SObjectType;
     const type = SObjectType[category];

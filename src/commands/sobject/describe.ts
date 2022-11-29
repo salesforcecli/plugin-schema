@@ -19,7 +19,7 @@ import { DescribeSObjectResult } from 'jsforce';
 Messages.importMessagesDirectory(__dirname);
 const messages = Messages.loadMessages('@salesforce/plugin-schema', 'describe');
 
-export class SchemaSObjectDescribe extends SfCommand<DescribeSObjectResult> {
+export class SObjectDescribe extends SfCommand<DescribeSObjectResult> {
   public static readonly summary = messages.getMessage('summary');
   public static readonly description = messages.getMessage('description');
   public static readonly examples = messages.getMessages('examples');
@@ -41,7 +41,7 @@ export class SchemaSObjectDescribe extends SfCommand<DescribeSObjectResult> {
   };
 
   public async run(): Promise<DescribeSObjectResult> {
-    const { flags } = await this.parse(SchemaSObjectDescribe);
+    const { flags } = await this.parse(SObjectDescribe);
     const conn = flags['target-org'].getConnection(flags['api-version']);
 
     // TODO: improve error msg object name is wrong/doesn't exists.

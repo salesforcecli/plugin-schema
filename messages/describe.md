@@ -12,10 +12,6 @@ You must specify a Salesforce org to use, either with the --target-org flag or b
 
   <%= config.bin %> <%= command.id %> --target-org my-org --sobject Account
 
-# flags.target-org.summary
-
-Salesforce org alias or login user.
-
 # flags.sobject.summary
 
 The API name of the object to describe.

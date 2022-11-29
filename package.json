@@ -70,11 +70,14 @@
     ],
     "topics": {
       "sobject": {
-        "list": {
-          "description": "List all Salesforce objects of a specified category."
-        },
-        "describe": {
-          "description": "Displays the metadata for a standard or custom object."
+        "description": "Commands to interact with Salesforce objects.",
+        "subtopics": {
+          "list": {
+            "description": "List all Salesforce objects of a specified category."
+          },
+          "describe": {
+            "description": "Displays the metadata for a standard or custom object."
+          }
         }
       }
     }
