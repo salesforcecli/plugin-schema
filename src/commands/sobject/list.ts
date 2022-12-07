@@ -22,7 +22,9 @@ export enum SObjectType {
   CUSTOM,
 }
 
-export class SObjectList extends SfCommand<string[]> {
+export type SObjectListResult = string[];
+
+export class SObjectList extends SfCommand<SObjectListResult> {
   public static readonly summary = messages.getMessage('summary');
   public static readonly description = messages.getMessage('description');
   public static readonly examples = messages.getMessages('examples');
@@ -40,13 +42,13 @@ export class SObjectList extends SfCommand<string[]> {
     }),
   };
 
-  public async run(): Promise<string[]> {
+  public async run(): Promise<SObjectListResult> {
     const { flags } = await this.parse(SObjectList);
 
     const category = flags.sobject.toUpperCase() as keyof typeof SObjectType;
     const type = SObjectType[category];
 
-    const typeDescriptions: string[] = [];
+    const sobjects: string[] = [];
 
     const allDescriptions = await flags['target-org'].getConnection(flags['api-version']).describeGlobal();
 
@@ -61,7 +63,7 @@ export class SObjectList extends SfCommand<string[]> {
       if (doPrint) {
         havePrinted = true;
         this.log(sobject.name);
-        typeDescriptions.push(sobject.name);
+        sobjects.push(sobject.name);
       }
     }
 
@@ -69,6 +71,6 @@ export class SObjectList extends SfCommand<string[]> {
       this.log(messages.getMessage('noTypeFound', [SObjectType[type]]));
     }
 
-    return typeDescriptions;
+    return sobjects;
   }
 }

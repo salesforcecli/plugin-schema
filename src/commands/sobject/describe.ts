@@ -44,8 +44,7 @@ export class SObjectDescribe extends SfCommand<DescribeSObjectResult> {
     const { flags } = await this.parse(SObjectDescribe);
     const conn = flags['target-org'].getConnection(flags['api-version']);
 
-    // TODO: improve error msg object name is wrong/doesn't exists.
-    const description = flags.usetoolingapi
+    const description = flags['tooling-api']
       ? await conn.tooling.describe(flags.sobject)
       : await conn.describe(flags.sobject);
 
