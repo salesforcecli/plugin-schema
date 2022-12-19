@@ -4,7 +4,7 @@ List all Salesforce objects of a specified category.
 
 # description
 
-You can list the standard objects, custom objects, or all. List includes only Salesforce objects, not Tooling API objects.
+You can list the standard objects, custom objects, or all. The lists include only Salesforce objects, not Tooling API objects.
 
 # examples
 
