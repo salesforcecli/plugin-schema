@@ -72,4 +72,20 @@ describe('force:schema:sobject:list', () => {
     expect(jsonOutput.status).to.equal(1);
     expect(jsonOutput.message).to.equal('describeGlobal query failed');
   });
+
+  it('should print the "noTypeFound" msg when no sobjects are found', async () => {
+    $$.fakeConnectionRequest = (request: AnyJson): Promise<AnyJson> => {
+      if (isString(request) && request.includes('/services/data/v42.0/sobjects')) {
+        return Promise.resolve({
+          sobjects: [],
+        });
+      }
+    };
+    const cmd = new SObjectList(['-u', 'testUser@test.com'], config);
+
+    // eslint-disable-next-line no-underscore-dangle
+    await cmd._run();
+
+    expect(stdoutSpy.args[1][0]).to.equal('No ALL objects found.\n');
+  });
 });

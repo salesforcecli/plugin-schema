@@ -5,7 +5,6 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import { CliUx } from '@oclif/core';
 import {
   SfCommand,
   Flags,
@@ -13,6 +12,7 @@ import {
   requiredOrgFlagWithDeprecations,
   loglevel,
 } from '@salesforce/sf-plugins-core';
+import { AnyJson } from '@salesforce/ts-types';
 import { Messages } from '@salesforce/core';
 import { DescribeSObjectResult } from 'jsforce';
 
@@ -48,9 +48,7 @@ export class SObjectDescribe extends SfCommand<DescribeSObjectResult> {
       ? await conn.tooling.describe(flags.sobject)
       : await conn.describe(flags.sobject);
 
-    if (!flags.json) {
-      CliUx.ux.styledJSON(description);
-    }
+    this.styledJSON(description as AnyJson);
 
     return description;
   }

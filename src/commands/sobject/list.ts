@@ -4,6 +4,7 @@
  * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
+import * as os from 'node:os';
 import {
   SfCommand,
   Flags,
@@ -48,26 +49,22 @@ export class SObjectList extends SfCommand<SObjectListResult> {
     const category = flags.sobject.toUpperCase() as keyof typeof SObjectType;
     const type = SObjectType[category];
 
-    const sobjects: string[] = [];
-
     const allDescriptions = await flags['target-org'].getConnection(flags['api-version']).describeGlobal();
 
-    let havePrinted = false;
+    const sobjects = allDescriptions.sobjects
+      .filter((sobject) => {
+        const isCustom = sobject.custom;
+        return (
+          type === SObjectType.ALL ||
+          (type === SObjectType.CUSTOM && isCustom) ||
+          (type === SObjectType.STANDARD && !isCustom)
+        );
+      })
+      .map((sobject) => sobject.name);
 
-    for (const sobject of allDescriptions.sobjects) {
-      const isCustom = sobject.custom === true;
-      const doPrint =
-        type === SObjectType.ALL ||
-        (type === SObjectType.CUSTOM && isCustom) ||
-        (type === SObjectType.STANDARD && !isCustom);
-      if (doPrint) {
-        havePrinted = true;
-        this.log(sobject.name);
-        sobjects.push(sobject.name);
-      }
-    }
-
-    if (!havePrinted) {
+    if (sobjects.length) {
+      this.log(sobjects.join(os.EOL));
+    } else {
       this.log(messages.getMessage('noTypeFound', [SObjectType[type]]));
     }
 
