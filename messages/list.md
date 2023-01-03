@@ -4,21 +4,21 @@ List all Salesforce objects of a specified category.
 
 # description
 
-You must specify a Salesforce org to use, either with the --target-org flag or by setting your default org with the `target-org` configuration variable.
+You can list the standard objects, custom objects, or all. The lists include only Salesforce objects, not Tooling API objects.
 
 # examples
 
-- List all objects:
+- List all objects in your default org:
 
-  <%= config.bin %> <%= command.id %> --target-org my-org --sobject all
+  <%= config.bin %> <%= command.id %> --sobject all
 
-- Only list custom objects:
+- List only custom objects in the org with alias "my-scratch-org":
 
-  <%= config.bin %> <%= command.id %> --target-org my-org --sobject custom
+  <%= config.bin %> <%= command.id %> --sobject custom --target-org my-scratch-org
 
 # flags.sobject.summary
 
-Type of objects to list.
+Category of objects to list.
 
 # noTypeFound
 

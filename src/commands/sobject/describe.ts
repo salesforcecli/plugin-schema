@@ -34,7 +34,7 @@ export class SObjectDescribe extends SfCommand<DescribeSObjectResult> {
       summary: messages.getMessage('flags.sobject.summary'),
       aliases: ['sobjecttype'],
     }),
-    'tooling-api': Flags.boolean({
+    'use-tooling-api': Flags.boolean({
       summary: messages.getMessage('flags.tooling-api.summary'),
       aliases: ['usetoolingapi', 't'],
     }),
@@ -44,7 +44,7 @@ export class SObjectDescribe extends SfCommand<DescribeSObjectResult> {
     const { flags } = await this.parse(SObjectDescribe);
     const conn = flags['target-org'].getConnection(flags['api-version']);
 
-    const description = flags['tooling-api']
+    const description = flags['use-tooling-api']
       ? await conn.tooling.describe(flags.sobject)
       : await conn.describe(flags.sobject);
 
