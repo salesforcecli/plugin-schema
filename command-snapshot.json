@@ -1,14 +1,14 @@
 [
   {
-    "command": "force:schema:sobject:describe",
+    "command": "sobject:describe",
     "plugin": "@salesforce/plugin-schema",
-    "flags": ["apiversion", "json", "loglevel", "sobjecttype", "targetusername", "usetoolingapi"],
-    "alias": []
+    "flags": ["api-version", "json", "loglevel", "sobject", "target-org", "use-tooling-api"],
+    "alias": ["force:schema:sobject:describe"]
   },
   {
-    "command": "force:schema:sobject:list",
+    "command": "sobject:list",
     "plugin": "@salesforce/plugin-schema",
-    "flags": ["apiversion", "json", "loglevel", "sobjecttypecategory", "targetusername"],
-    "alias": []
+    "flags": ["api-version", "json", "loglevel", "sobject", "target-org"],
+    "alias": ["force:schema:sobject:list"]
   }
 ]

@@ -6,17 +6,18 @@
   "main": "lib/index.js",
   "bugs": "https://github.com/forcedotcom/cli/issues",
   "dependencies": {
-    "@oclif/core": "^1.21.0",
-    "@salesforce/command": "^5.2.25",
-    "@salesforce/core": "^3.32.6",
+    "@oclif/core": "^1.20.4",
+    "@salesforce/core": "^3.32.8",
+    "@salesforce/sf-plugins-core": "^1.19.2",
     "tslib": "^2"
   },
   "devDependencies": {
     "@oclif/plugin-command-snapshot": "^3.2.16",
+    "@oclif/plugin-help": "^5.1.22",
     "@salesforce/cli-plugins-testkit": "^3.2.15",
     "@salesforce/dev-config": "^3.0.1",
     "@salesforce/dev-scripts": "^3.1.0",
-    "@salesforce/plugin-command-reference": "^1.5.8",
+    "@salesforce/plugin-command-reference": "^2.2.8",
     "@salesforce/prettier-config": "^0.0.2",
     "@salesforce/ts-sinon": "1.4.2",
     "@swc/core": "^1.3.24",
@@ -31,6 +32,7 @@
     "eslint-plugin-header": "^3.0.0",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-jsdoc": "^39.6.4",
+    "eslint-plugin-sf-plugin": "^1.1.5",
     "husky": "^7.0.4",
     "mocha": "^9.1.3",
     "nyc": "^15.1.0",
@@ -69,17 +71,14 @@
       "@salesforce/plugin-command-reference"
     ],
     "topics": {
-      "force": {
-        "external": true,
+      "sobject": {
+        "description": "Commands to interact with Salesforce objects.",
         "subtopics": {
-          "schema": {
-            "description": "List metadata types in your Salesforce org using the CLI",
-            "longDescription": "Use the schema commands to to list metadata types within your Salesforce org using the Salesforce CLI.",
-            "subtopics": {
-              "sobject": {
-                "description": "list standard object metadata types"
-              }
-            }
+          "list": {
+            "description": "List all Salesforce objects of a specified category."
+          },
+          "describe": {
+            "description": "Displays the metadata for a standard or custom object."
           }
         }
       }
