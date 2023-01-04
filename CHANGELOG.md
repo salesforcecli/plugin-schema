@@ -1,3 +1,12 @@
+## [2.2.1](https://github.com/salesforcecli/plugin-schema/compare/2.2.0...2.2.1) (2023-01-04)
+
+
+### Bug Fixes
+
+* add command schemas ([#367](https://github.com/salesforcecli/plugin-schema/issues/367)) ([71c29b9](https://github.com/salesforcecli/plugin-schema/commit/71c29b99383ef4f2017eb1b26d8545945acce0b7))
+
+
+
 # [2.2.0](https://github.com/salesforcecli/plugin-schema/compare/2.1.19...2.2.0) (2023-01-04)
 
 
