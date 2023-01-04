@@ -20,6 +20,10 @@ You can list the standard objects, custom objects, or all. The lists include onl
 
 Category of objects to list.
 
+# invalid-sobject-type
+
+"--sobject" flag can be set only to <all|custom|standard>."
+
 # noTypeFound
 
 No %s objects found.

@@ -34,12 +34,18 @@ export class SObjectList extends SfCommand<SObjectListResult> {
     'target-org': requiredOrgFlagWithDeprecations,
     'api-version': orgApiVersionFlagWithDeprecations,
     loglevel,
-    sobject: Flags.enum({
+    sobject: Flags.string({
       char: 's',
-      options: ['all', 'standard', 'custom', 'ALL', 'STANDARD', 'CUSTOM'],
       default: 'ALL',
       summary: messages.getMessage('flags.sobject.summary'),
       aliases: ['sobjecttypecategory', 'c'],
+      parse: (val) => {
+        const lowercasedType = val.toLowerCase();
+        if (!['all', 'standard', 'custom'].includes(lowercasedType)) {
+          throw messages.createError('invalid-sobject-type');
+        }
+        return Promise.resolve(lowercasedType);
+      },
     }),
   };
 
