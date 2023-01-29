@@ -30,7 +30,7 @@ export class SObjectList extends SfCommand<SObjectListResult> {
   public static readonly description = messages.getMessage('description');
   public static readonly examples = messages.getMessages('examples');
   public static readonly aliases = ['force:schema:sobject:list'];
-  public static flags = {
+  public static readonly flags = {
     'target-org': requiredOrgFlagWithDeprecations,
     'api-version': orgApiVersionFlagWithDeprecations,
     loglevel,
