@@ -5,9 +5,11 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 import * as path from 'path';
+import { strict as assert } from 'node:assert';
 import { expect } from 'chai';
 import { DescribeSObjectResult } from 'jsforce';
 import { TestSession, execCmd } from '@salesforce/cli-plugins-testkit';
+import { SObjectListResult } from '../src/commands/sobject/list';
 
 let session: TestSession;
 
@@ -63,32 +65,35 @@ describe('verifies all commands run successfully ', () => {
 
   describe('list command', () => {
     it('requests all objects by default', () => {
-      const output = execCmd<string[]>('force:schema:sobject:list --json', { ensureExitCode: 0 }).jsonOutput;
-      expect(output.result).to.have.length.greaterThan(1);
-      allObjects = output.result;
+      const result = execCmd<SObjectListResult>('force:schema:sobject:list --json', { ensureExitCode: 0 }).jsonOutput
+        ?.result;
+      assert(result?.length);
+      expect(result).to.have.length.greaterThan(1);
+      allObjects = result;
     });
 
     it('requests all objects explicity', () => {
-      const output = execCmd<string[]>('force:schema:sobject:list --json --sobjecttypecategory ALL', {
+      const result = execCmd<SObjectListResult>('force:schema:sobject:list --json --sobjecttypecategory ALL', {
         ensureExitCode: 0,
-      }).jsonOutput;
-      expect(output.result).to.have.length(allObjects.length);
-      allObjects = output.result;
+      }).jsonOutput?.result;
+      assert(result);
+      expect(result).to.have.length(allObjects.length);
+      allObjects = result;
     });
 
     it('requests standard objects', () => {
-      const output = execCmd<string[]>('force:schema:sobject:list --json --sobjecttypecategory STANDARD', {
+      const result = execCmd<SObjectListResult>('force:schema:sobject:list --json --sobjecttypecategory STANDARD', {
         ensureExitCode: 0,
-      }).jsonOutput;
+      }).jsonOutput?.result;
       // all the objects are standard in a vanilla scratch org
-      expect(output.result).to.have.length(allObjects.length);
+      expect(result).to.have.length(allObjects.length);
     });
 
     it('requests custom objects but finds none in vanilla scratch org', () => {
-      const output = execCmd<string[]>('force:schema:sobject:list --json --sobjecttypecategory CUSTOM', {
+      const result = execCmd<SObjectListResult>('force:schema:sobject:list --json --sobjecttypecategory CUSTOM', {
         ensureExitCode: 0,
-      }).jsonOutput;
-      expect(output.result).to.have.length(0);
+      }).jsonOutput?.result;
+      expect(result).to.have.length(0);
     });
 
     it('no errors on non-json commands', () => {
@@ -104,14 +109,14 @@ describe('verifies all commands run successfully ', () => {
       const output = execCmd<DescribeSObjectResult>('force:schema:sobject:describe --sobjecttype Account --json', {
         ensureExitCode: 0,
       }).jsonOutput;
-      expect(output.result).to.include.keys(objectDescribeKeys);
+      expect(output?.result).to.include.keys(objectDescribeKeys);
     });
 
     it('describes ApexClass via toolingApi', () => {
       const output = execCmd<DescribeSObjectResult>('force:schema:sobject:describe --sobjecttype ApexClass -t --json', {
         ensureExitCode: 0,
       }).jsonOutput;
-      expect(output.result).to.include.keys(objectDescribeKeys);
+      expect(output?.result).to.include.keys(objectDescribeKeys);
     });
 
     it('no errors on non-json commands', () => {

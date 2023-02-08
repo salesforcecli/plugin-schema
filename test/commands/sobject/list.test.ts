@@ -81,6 +81,7 @@ describe('force:schema:sobject:list', () => {
           sobjects: [],
         });
       }
+      throw new Error('Unexpected request');
     };
     const cmd = new SObjectList(['-u', 'testUser@test.com'], config);
 
