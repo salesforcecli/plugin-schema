@@ -28,6 +28,7 @@ describe('force:schema:sobject:list', () => {
   beforeEach(async () => {
     await $$.stubAuths(testOrg);
     stdoutSpy = $$.SANDBOX.stub(process.stdout, 'write');
+    $$.SANDBOX.stub(process.stderr, 'write');
   });
 
   afterEach(async () => {
@@ -87,7 +88,7 @@ describe('force:schema:sobject:list', () => {
 
     // eslint-disable-next-line no-underscore-dangle
     await cmd._run();
-
-    expect(stdoutSpy.args[1][0]).to.equal('No ALL objects found.\n');
+    const stdout = stdoutSpy.args.flat().join('');
+    expect(stdout).to.include('No ALL objects found.\n');
   });
 });
