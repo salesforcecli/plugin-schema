@@ -711,7 +711,7 @@
     widest-line "^3.1.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/core@^2.0.2-beta.6", "@oclif/core@^2.0.3", "@oclif/core@^2.0.7", "@oclif/core@^2.1.1":
+"@oclif/core@^2.0.10", "@oclif/core@^2.0.2-beta.6", "@oclif/core@^2.0.3", "@oclif/core@^2.1.1":
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.1.1.tgz#8ffa83fe39f43bd66fb6f0731527b17911fc937e"
   integrity sha512-t0zez9ydn3eveZM2vsMbrL2hNKzlHSfwEl4A29VlIimOxpQDB9AKZXX02lhTB3BSKbVF24UOlkzYiX7n9Bdc0A==
@@ -1119,12 +1119,12 @@
     chalk "^4"
     inquirer "^8.2.5"
 
-"@salesforce/sf-plugins-core@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-2.0.1.tgz#079d6cc200ea53ce7fb60aafb5eaf5f2b48e46c9"
-  integrity sha512-vT4Y9n/4lStSWrfMAlgQB/XzwJAYK6ibcsFykHNCl86NCoebVGzg5KDIxYjHpidrt2PG/nPk7NL9iBtTH/p8Yg==
+"@salesforce/sf-plugins-core@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-2.1.1.tgz#2c03762328d5ad8462de5d364bb1c54836daef3f"
+  integrity sha512-O+GP+nY/oRRtPVL7r0ITjUTDT7mbWHQt8jzUJ8nux7mkp1wKk1uq/qTtkDMc1fcFhCkslJSyIzoE84X7j9w7jQ==
   dependencies:
-    "@oclif/core" "^2.0.7"
+    "@oclif/core" "^2.0.10"
     "@salesforce/core" "^3.33.1"
     "@salesforce/kit" "^1.8.3"
     "@salesforce/ts-types" "^1.7.1"
