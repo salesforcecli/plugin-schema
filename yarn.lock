@@ -708,7 +708,7 @@
     is-wsl "^2.1.1"
     tslib "^2.3.1"
 
-"@oclif/core@^1.20.3", "@oclif/core@^1.20.4", "@oclif/core@^1.23.1":
+"@oclif/core@^1.20.3", "@oclif/core@^1.20.4":
   version "1.25.0"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.25.0.tgz#a3891f903bf211ce1f3c8a05419b686f02c5bbd6"
   integrity sha512-vS8L5Uqc5Wuq3zmKVvX5LLcyxhfH2X2q+LG1P6czzkh6k09uLeDaZfwaYPXD7ItM4Vfy+KEctfKiWePeLDnOpg==
@@ -742,7 +742,7 @@
     widest-line "^3.1.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/core@^2.0.2-beta.6", "@oclif/core@^2.0.3", "@oclif/core@^2.0.7", "@oclif/core@^2.1.1":
+"@oclif/core@^2.0.2-beta.6", "@oclif/core@^2.0.3", "@oclif/core@^2.0.7", "@oclif/core@^2.1.1", "@oclif/core@^2.1.7":
   version "2.1.7"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.1.7.tgz#d51d8758a195bb0d813d19a89b286756ddb0b51b"
   integrity sha512-6QZvUmKHLqrESIW4mu8azE0sQ7I9LVC3iM9O4ipp53Pqe5pQhIyxv8tB/zvagmPxJXXiCbfPsBazeqjCcM3/tg==
@@ -866,12 +866,12 @@
     widest-line "^3.1.0"
     wrap-ansi "^6.2.0"
 
-"@oclif/plugin-help@^5.1.19", "@oclif/plugin-help@^5.1.22":
-  version "5.1.22"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-5.1.22.tgz#65b78efe34af10e9427e046fb4d3524d62149226"
-  integrity sha512-gflrCqV3c7nd1UgknuZZTX6Th9CTkvVyTjL76UNHrea3kCZEpPzsMGhwP989R+j3KSGJGeZVrq2i9g2QXI9tZA==
+"@oclif/plugin-help@^5.1.19", "@oclif/plugin-help@^5.2.5":
+  version "5.2.5"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-5.2.5.tgz#416d2c01f44b18b16c884279af2dfef82a644cd3"
+  integrity sha512-iIN6PNtGrqAH1j+FP5X4aNu24+4BlwbXueFSO7/lM/DDrin42hXoxMlnSNZcrQjFE3myznn+fOu3zlcedV2Y8Q==
   dependencies:
-    "@oclif/core" "^1.23.1"
+    "@oclif/core" "^2.1.7"
 
 "@oclif/plugin-not-found@^2.3.7":
   version "2.3.9"
