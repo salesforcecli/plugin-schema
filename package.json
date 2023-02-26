@@ -16,7 +16,7 @@
     "@oclif/plugin-help": "^5.2.5",
     "@salesforce/cli-plugins-testkit": "^3.2.18",
     "@salesforce/dev-config": "^3.0.1",
-    "@salesforce/dev-scripts": "^3.1.1",
+    "@salesforce/dev-scripts": "^4.1.1",
     "@salesforce/plugin-command-reference": "^2.4.1",
     "@salesforce/prettier-config": "^0.0.2",
     "@salesforce/ts-sinon": "1.4.6",
@@ -43,7 +43,7 @@
     "sinon": "10.0.0",
     "ts-node": "^10.0.0",
     "typescript": "^4.9.5",
-    "wireit": "^0.9.3"
+    "wireit": "^0.9.5"
   },
   "config": {},
   "engines": {
@@ -88,23 +88,18 @@
   },
   "repository": "salesforcecli/plugin-schema",
   "scripts": {
-    "build": "sf-build",
+    "build": "wireit",
     "clean": "sf-clean",
     "clean-all": "sf-clean all",
     "clean:lib": "shx rm -rf lib && shx rm -rf coverage && shx rm -rf .nyc_output && shx rm -f oclif.manifest.json",
-    "compile": "sf-compile",
+    "compile": "wireit",
     "docs": "sf-docs",
-    "format": "sf-format",
-    "lint": "sf-lint",
+    "format": "wireit",
+    "lint": "wireit",
     "postpack": "shx rm -f oclif.manifest.json",
     "prepack": "sf-prepack",
     "prepare": "sf-install",
-    "pretest": "sf-compile-test",
-    "test": "sf-test",
-    "test:command-reference": "wireit",
-    "test:compile": "wireit",
-    "test:deprecation-policy": "wireit",
-    "test:json-schema": "wireit",
+    "test": "wireit",
     "test:nuts": "nyc mocha \"**/*.nut.ts\" --slow 4500 --timeout 600000 --parallel",
     "test:only": "wireit",
     "version": "oclif readme"
@@ -133,7 +128,15 @@
       "clean": "if-file-deleted"
     },
     "format": {
-      "command": "prettier --write \"+(src|test|schemas)/**/*.+(ts|js|json)|command-snapshot.json\""
+      "command": "prettier --write \"+(src|test|schemas)/**/*.+(ts|js|json)|command-snapshot.json\"",
+      "files": [
+        "src/**/*.ts",
+        "test/**/*.ts",
+        "schemas/**/*.json",
+        "command-snapshot.json",
+        ".prettier*"
+      ],
+      "output": []
     },
     "lint": {
       "command": "eslint src test --color --cache --cache-location .eslintcache",
@@ -141,8 +144,7 @@
         "src/**/*.ts",
         "test/**/*.ts",
         "messages/**",
-        ".eslintignore",
-        ".eslintrc.js"
+        ".eslint*"
       ],
       "output": []
     },
@@ -171,7 +173,10 @@
         "test/**/*.ts",
         "src/**/*.ts",
         "tsconfig.json",
-        "test/tsconfig.json"
+        ".mocha*",
+        "test/tsconfig.json",
+        "!*.nut.ts",
+        ".nycrc"
       ],
       "output": []
     },
@@ -179,7 +184,8 @@
       "command": "\"./bin/dev\" commandreference:generate --erroronwarnings",
       "files": [
         "src/**/*.ts",
-        "messages/**"
+        "messages/**",
+        "package.json"
       ],
       "output": [
         "tmp/root"
