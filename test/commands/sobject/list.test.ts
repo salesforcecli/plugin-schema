@@ -5,34 +5,22 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 import * as os from 'node:os';
-import * as path from 'path';
 import { isString, AnyJson } from '@salesforce/ts-types';
-import { TestContext, MockTestOrgData } from '@salesforce/core/lib/testSetup';
-import { Config } from '@oclif/core';
-import { expect } from 'chai';
-import stripAnsi = require('strip-ansi');
+import { TestContext, MockTestOrgData, shouldThrow } from '@salesforce/core/lib/testSetup';
+import { expect, assert } from 'chai';
+import { stubSfCommandUx } from '@salesforce/sf-plugins-core';
+import { SfError } from '@salesforce/core';
 import { SObjectList } from '../../../src/commands/sobject/list';
 
 describe('force:schema:sobject:list', () => {
   const $$ = new TestContext();
   const testOrg = new MockTestOrgData();
-  let config: Config;
-
-  let stdoutSpy: sinon.SinonSpy;
-
-  before(async () => {
-    config = new Config({ root: path.resolve(__dirname, '../../..') });
-    await config.load();
-  });
+  let sfCommandUxStubs: ReturnType<typeof stubSfCommandUx>;
 
   beforeEach(async () => {
     await $$.stubAuths(testOrg);
-    stdoutSpy = $$.SANDBOX.stub(process.stdout, 'write');
     $$.SANDBOX.stub(process.stderr, 'write');
-  });
-
-  afterEach(async () => {
-    $$.SANDBOX.restore();
+    sfCommandUxStubs = stubSfCommandUx($$.SANDBOX);
   });
 
   it('should log metadata types correctly', async () => {
@@ -47,14 +35,11 @@ describe('force:schema:sobject:list', () => {
       }
       return Promise.resolve({});
     };
-    const cmd = new SObjectList(['--sobjecttypecategory', 'all', '-u', 'testUser@test.com'], config);
 
-    // eslint-disable-next-line no-underscore-dangle
-    await cmd._run();
-
-    const stdout = stdoutSpy.args.flat().join('');
-
-    expect(stdout).includes(`customMDT${os.EOL}defaultMDT`);
+    await SObjectList.run(['--sobjecttypecategory', 'all', '-u', 'testUser@test.com']);
+    expect(sfCommandUxStubs.log.getCalls().flatMap((call) => call.args)).to.deep.include(
+      `customMDT${os.EOL}defaultMDT`
+    );
   });
 
   it('should print the error when describeGlobal method fails', async () => {
@@ -64,15 +49,13 @@ describe('force:schema:sobject:list', () => {
       }
       return Promise.resolve({});
     };
-    const cmd = new SObjectList(['--sobjecttypecategory', 'all', '-u', 'testUser@test.com', '--json'], config);
 
-    // eslint-disable-next-line no-underscore-dangle
-    await cmd._run();
-
-    const jsonOutput = JSON.parse(stripAnsi(stdoutSpy.args.flat().join('')));
-
-    expect(jsonOutput.status).to.equal(1);
-    expect(jsonOutput.message).to.equal('describeGlobal query failed');
+    try {
+      await shouldThrow(SObjectList.run(['--sobjecttypecategory', 'all', '-u', 'testUser@test.com', '--json']));
+    } catch (e) {
+      assert(e instanceof SfError);
+      expect(e.message).to.equal('describeGlobal query failed');
+    }
   });
 
   it('should print the "noTypeFound" msg when no sobjects are found', async () => {
@@ -84,11 +67,8 @@ describe('force:schema:sobject:list', () => {
       }
       throw new Error('Unexpected request');
     };
-    const cmd = new SObjectList(['-u', 'testUser@test.com'], config);
+    await SObjectList.run(['-u', 'testUser@test.com']);
 
-    // eslint-disable-next-line no-underscore-dangle
-    await cmd._run();
-    const stdout = stdoutSpy.args.flat().join('');
-    expect(stdout).to.include('No ALL objects found.\n');
+    expect(sfCommandUxStubs.log.getCalls().flatMap((call) => call.args)).to.deep.include('No ALL objects found.');
   });
 });
