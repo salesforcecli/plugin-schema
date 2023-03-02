@@ -4,29 +4,19 @@
  * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
-import * as path from 'path';
 import { isString, AnyJson } from '@salesforce/ts-types';
 import { TestContext, MockTestOrgData } from '@salesforce/core/lib/testSetup';
-import { Config } from '@oclif/core';
 import { expect } from 'chai';
-import stripAnsi = require('strip-ansi');
+import { stubSfCommandUx } from '@salesforce/sf-plugins-core';
 import { SObjectDescribe } from '../../../src/commands/sobject/describe';
 
 describe('force:schema:sobject:describe', () => {
   const $$ = new TestContext();
   const testOrg = new MockTestOrgData();
-  let config: Config;
-
-  let stdoutSpy: sinon.SinonSpy;
-
-  before(async () => {
-    config = new Config({ root: path.resolve(__dirname, '../../..') });
-    await config.load();
-  });
 
   beforeEach(async () => {
     await $$.stubAuths(testOrg);
-    stdoutSpy = $$.SANDBOX.stub(process.stdout, 'write');
+    stubSfCommandUx($$.SANDBOX);
   });
 
   afterEach(async () => {
@@ -43,15 +33,8 @@ describe('force:schema:sobject:describe', () => {
       return Promise.resolve({});
     };
 
-    const cmd = new SObjectDescribe(['--sobjecttype', 'Account', '-u', 'testUser@test.com', '--json'], config);
-
-    // eslint-disable-next-line no-underscore-dangle
-    await cmd._run();
-
-    const jsonOutput = JSON.parse(stripAnsi(stdoutSpy.args.flat().join('')));
-
-    expect(jsonOutput.status).to.equal(0);
-    expect(jsonOutput.result).to.deep.equal(expected);
+    const result = await SObjectDescribe.run(['--sobjecttype', 'Account', '-u', 'testUser@test.com', '--json']);
+    expect(result).to.deep.equal(expected);
   });
 
   it('logs types correctly with no errors and tooling api', async () => {
@@ -62,14 +45,7 @@ describe('force:schema:sobject:describe', () => {
       return Promise.resolve({});
     };
 
-    const cmd = new SObjectDescribe(['--sobjecttype', 'ApexClass', '-u', 'testUser@test.com', '-t', '--json'], config);
-
-    // eslint-disable-next-line no-underscore-dangle
-    await cmd._run();
-
-    const jsonOutput = JSON.parse(stripAnsi(stdoutSpy.args.flat().join('')));
-
-    expect(jsonOutput.status).to.equal(0);
-    expect(jsonOutput.result).to.deep.equal(expected);
+    const result = await SObjectDescribe.run(['--sobjecttype', 'ApexClass', '-u', 'testUser@test.com', '-t', '--json']);
+    expect(result).to.deep.equal(expected);
   });
 });
