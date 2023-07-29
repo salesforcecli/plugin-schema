@@ -1024,7 +1024,7 @@
     sinon "^5.1.1"
     tslib "^2.6.0"
 
-"@salesforce/ts-types@^2.0.2", "@salesforce/ts-types@^2.0.3", "@salesforce/ts-types@^2.0.4", "@salesforce/ts-types@^2.0.5":
+"@salesforce/ts-types@^2.0.2", "@salesforce/ts-types@^2.0.3", "@salesforce/ts-types@^2.0.5":
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/@salesforce/ts-types/-/ts-types-2.0.5.tgz#5471236522588e08c094fc3fda27761e6ec935fa"
   integrity sha512-X91De9ZK/X86lYcFAzoAt/pPeY6Lf+G7LyAJRx3FuYpdc+nocvniUnnJGXwSmyKMMxW2NifvQgST7FTZLZ5REA==
@@ -7075,6 +7075,17 @@ widest-line@^3.1.0:
   integrity sha512-NsmoXalsWVDMGupxZ5R08ka9flZjjiLvHVAWYOKtiKM8ujtZWr9cRffak+uSE48+Ob8ObalXpwyeUiyDD6QFgg==
   dependencies:
     string-width "^4.0.0"
+
+wireit@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/wireit/-/wireit-0.10.0.tgz#9f2fe35dbf47b232650c488491651858cd7aaff1"
+  integrity sha512-4TX6V9D/2iXUBzdqQaUG+cRePle0mDx1Q7x4Ka2cA8lgp1+ZBhrOTiLsXYRl2roQEldEFgQ2Ff1W8YgyNWAa6w==
+  dependencies:
+    braces "^3.0.2"
+    chokidar "^3.5.3"
+    fast-glob "^3.2.11"
+    jsonc-parser "^3.0.0"
+    proper-lockfile "^4.1.2"
 
 wireit@^0.9.5:
   version "0.9.5"
