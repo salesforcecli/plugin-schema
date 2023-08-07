@@ -690,10 +690,10 @@
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/plugin-command-snapshot@^4.0.10":
-  version "4.0.10"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-command-snapshot/-/plugin-command-snapshot-4.0.10.tgz#1c55337868105cbff80ee5f4e077679ed9dc8a80"
-  integrity sha512-hGmhZb92BCI4Ck7EFqBt1Rr+hf0YZ/joZYOQ0ccXnWa/5TRt5kXO/BWSgPA9c3zmyK1h2awoJAUBdzXB+4TDWg==
+"@oclif/plugin-command-snapshot@^4.0.11":
+  version "4.0.11"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-command-snapshot/-/plugin-command-snapshot-4.0.11.tgz#96bdefba4b881506b42dc4836300323c6a44e0a5"
+  integrity sha512-PLkhDqPVOdkye7FTOA0n698j0tsdDseeSfvMvT6WubaU0wzeHrdz/bhVF1e44nhN7omXOuVliNendM83gzEfTw==
   dependencies:
     "@oclif/core" "^2.11.1"
     chalk "^4.1.2"
@@ -701,7 +701,7 @@
     lodash "^4.17.21"
     semver "^7.5.4"
     ts-json-schema-generator "^1.2.0"
-    tslib "^2.6.0"
+    tslib "^2.6.1"
 
 "@oclif/plugin-help@^5.2.11", "@oclif/plugin-help@^5.2.14":
   version "5.2.15"
