@@ -70,74 +70,89 @@ sfdx plugins
 
 <!-- commands -->
 
-- [`sfdx force:schema:sobject:describe -s <string> [-t] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-forceschemasobjectdescribe--s-string--t--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-- [`sfdx force:schema:sobject:list [-c <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-forceschemasobjectlist--c-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+- [`sfdx sobject:describe`](#sfdx-sobjectdescribe)
+- [`sfdx sobject:list`](#sfdx-sobjectlist)
 
-## `sfdx force:schema:sobject:describe -s <string> [-t] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx sobject:describe`
 
-displays the metadata for a standard or custom object
-
-```
-USAGE
-  $ sfdx force:schema:sobject:describe -s <string> [-t] [-u <string>] [--apiversion <string>] [--json] [--loglevel
-    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
-
-FLAGS
-  -s, --sobjecttype=<value>                                                         (required) the API name of the
-                                                                                    object to describe
-  -t, --usetoolingapi                                                               execute with Tooling API
-  -u, --targetusername=<value>                                                      username or alias for the target
-                                                                                    org; overrides default target org
-  --apiversion=<value>                                                              override the api version used for
-                                                                                    api requests made by this command
-  --json                                                                            format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
-                                                                                    this command invocation
-
-DESCRIPTION
-  displays the metadata for a standard or custom object
-
-EXAMPLES
-  $ sfdx force:schema:sobject:describe -s Account
-
-  $ sfdx force:schema:sobject:describe -s MyObject__c
-
-  $ sfdx force:schema:sobject:describe -s ApexClass -t
-```
-
-_See code: [src/commands/force/schema/sobject/describe.ts](https://github.com/salesforcecli/plugin-schema/blob/v2.1.0/src/commands/force/schema/sobject/describe.ts)_
-
-## `sfdx force:schema:sobject:list [-c <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
-
-list all objects of a specified category
+Display the metadata for a standard or custom object or a Tooling API object.
 
 ```
 USAGE
-  $ sfdx force:schema:sobject:list [-c <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel
-    trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ sfdx sobject:describe -o <value> -s <value> [--json] [--api-version <value>] [-t]
 
 FLAGS
-  -c, --sobjecttypecategory=<value>                                                 [default: ALL] the type of objects
-                                                                                    to list (all|custom|standard)
-  -u, --targetusername=<value>                                                      username or alias for the target
-                                                                                    org; overrides default target org
-  --apiversion=<value>                                                              override the api version used for
-                                                                                    api requests made by this command
-  --json                                                                            format output as json
-  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
-                                                                                    this command invocation
+  -o, --target-org=<value>  (required) Username or alias of the target org.
+  -s, --sobject=<value>     (required) API name of the object to describe.
+  -t, --use-tooling-api     Use Tooling API to display metadata for Tooling API objects.
+  --api-version=<value>     Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --json  Format output as json.
 
 DESCRIPTION
-  list all objects of a specified category
+  Display the metadata for a standard or custom object or a Tooling API object.
+
+  The metadata is displayed in JSON format. See this topic for a description of each property: https://developer.salesfo
+  rce.com/docs/atlas.en-us.api.meta/api/sforce_api_calls_describesobjects_describesobjectresult.htm.
+
+  This command displays metadata for Salesforce objects by default. Use the --use-tooling-api flag to view metadata for
+  a Tooling API object.
+
+ALIASES
+  $ sfdx force:schema:sobject:describe
 
 EXAMPLES
-  $ sfdx force:schema:sobject:list -c all
+  Display the metadata of the "Account" standard object in your default org:
 
-  $ sfdx force:schema:sobject:list -c custom
+    $ sfdx sobject:describe --sobject Account
 
-  $ sfdx force:schema:sobject:list -c standard
+  Display the metadata of the "MyObject__c" custom object in the org with alias "my-scratch-org":
+
+    $ sfdx sobject:describe --sobject MyObject__c --target-org my-scratch-org
+
+  Display the metadata of the ApexCodeCoverage Tooling API object in your default org:
+
+    $ sfdx sobject:describe --sobject ApexCodeCoverage --use-tooling-api
 ```
 
-_See code: [src/commands/force/schema/sobject/list.ts](https://github.com/salesforcecli/plugin-schema/blob/v2.1.0/src/commands/force/schema/sobject/list.ts)_
+_See code: [src/commands/sobject/describe.ts](https://github.com/salesforcecli/plugin-schema/blob/2.3.27/src/commands/sobject/describe.ts)_
+
+## `sfdx sobject:list`
+
+List all Salesforce objects of a specified category.
+
+```
+USAGE
+  $ sfdx sobject:list -o <value> [--json] [--api-version <value>] [-s <value>]
+
+FLAGS
+  -o, --target-org=<value>  (required) Username or alias of the target org.
+  -s, --sobject=<value>     [default: ALL] Category of objects to list.
+  --api-version=<value>     Override the api version used for api requests made by this command
+
+GLOBAL FLAGS
+  --json  Format output as json.
+
+DESCRIPTION
+  List all Salesforce objects of a specified category.
+
+  You can list the standard objects, custom objects, or all. The lists include only Salesforce objects, not Tooling API
+  objects.
+
+ALIASES
+  $ sfdx force:schema:sobject:list
+
+EXAMPLES
+  List all objects in your default org:
+
+    $ sfdx sobject:list --sobject all
+
+  List only custom objects in the org with alias "my-scratch-org":
+
+    $ sfdx sobject:list --sobject custom --target-org my-scratch-org
+```
+
+_See code: [src/commands/sobject/list.ts](https://github.com/salesforcecli/plugin-schema/blob/2.3.27/src/commands/sobject/list.ts)_
 
 <!-- commandsstop -->
