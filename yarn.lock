@@ -5271,10 +5271,10 @@ object.values@^1.1.6:
     define-properties "^1.1.4"
     es-abstract "^1.20.4"
 
-oclif@^3.16.0:
-  version "3.16.0"
-  resolved "https://registry.yarnpkg.com/oclif/-/oclif-3.16.0.tgz#b1983f310cbb25944d7da02125aa0c095aa7669d"
-  integrity sha512-qbPJ9SifBDPeMnuYIyJc0+kGyXmLubJs/lOD1wjrvAiKqTWQ1xy/EFlNMgBGETCf7RQf1iSJmvf+s22ZkLc7Ow==
+oclif@^3.17.2:
+  version "3.17.2"
+  resolved "https://registry.yarnpkg.com/oclif/-/oclif-3.17.2.tgz#f13756c9b1968047e76b99cb09db9725e96fb2f6"
+  integrity sha512-+vFXxgmR7dGGz+g6YiqSZu2LXVkBMaS9/rhtsLGkYw45e53CW/3kBgPRnOvxcTDM3Td9JPeBD2JWxXnPKGQW3A==
   dependencies:
     "@oclif/core" "^2.11.4"
     "@oclif/plugin-help" "^5.2.14"
