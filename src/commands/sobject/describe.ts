@@ -36,7 +36,7 @@ export class SObjectDescribe extends SfCommand<DescribeSObjectResult> {
     }),
     'use-tooling-api': Flags.boolean({
       char: 't',
-      summary: messages.getMessage('flags.tooling-api.summary'),
+      summary: messages.getMessage('flags.use-tooling-api.summary'),
       aliases: ['usetoolingapi'],
     }),
   };
