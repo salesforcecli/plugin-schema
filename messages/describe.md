@@ -14,9 +14,9 @@ This command displays metadata for Salesforce objects by default. Use the --use-
 
   <%= config.bin %> <%= command.id %> --sobject Account
 
-- Display the metadata of the "MyObject__c" custom object in the org with alias "my-scratch-org":
+- Display the metadata of the "MyObject\_\_c" custom object in the org with alias "my-scratch-org":
 
-  <%= config.bin %> <%= command.id %> --sobject MyObject__c --target-org my-scratch-org
+  <%= config.bin %> <%= command.id %> --sobject MyObject\_\_c --target-org my-scratch-org
 
 - Display the metadata of the ApexCodeCoverage Tooling API object in your default org:
 
@@ -26,6 +26,6 @@ This command displays metadata for Salesforce objects by default. Use the --use-
 
 API name of the object to describe.
 
-# flags.tooling-api.summary
+# flags.use-tooling-api.summary
 
 Use Tooling API to display metadata for Tooling API objects.
