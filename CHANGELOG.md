@@ -1,3 +1,9 @@
+## [2.3.32](https://github.com/salesforcecli/plugin-schema/compare/2.3.31...2.3.32) (2023-10-27)
+
+### Bug Fixes
+
+- message naming consistency ([97dde95](https://github.com/salesforcecli/plugin-schema/commit/97dde9536921dbf20fa0b018bbf1ac8d784bcfbe))
+
 ## [2.3.31](https://github.com/salesforcecli/plugin-schema/compare/2.3.30...2.3.31) (2023-10-22)
 
 ### Bug Fixes
