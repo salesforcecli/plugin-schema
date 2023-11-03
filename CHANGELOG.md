@@ -1,3 +1,9 @@
+## [2.3.33](https://github.com/salesforcecli/plugin-schema/compare/2.3.32...2.3.33) (2023-11-03)
+
+### Bug Fixes
+
+- annoying "\_\_c" problem ([889c642](https://github.com/salesforcecli/plugin-schema/commit/889c642e5891d17ad27c3f7153a3c0f27d44f99f))
+
 ## [2.3.32](https://github.com/salesforcecli/plugin-schema/compare/2.3.31...2.3.32) (2023-10-27)
 
 ### Bug Fixes

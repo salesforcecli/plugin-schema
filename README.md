@@ -107,16 +107,16 @@ EXAMPLES
 
     $ sfdx sobject:describe --sobject Account
 
-  Display the metadata of the "MyObject\_\_c" custom object in the org with alias "my-scratch-org":
+  Display the metadata of the "MyObject__c" custom object in the org with alias "my-scratch-org":
 
-    $ sfdx sobject:describe --sobject MyObject\_\_c --target-org my-scratch-org
+    $ sfdx sobject:describe --sobject MyObject__c --target-org my-scratch-org
 
   Display the metadata of the ApexCodeCoverage Tooling API object in your default org:
 
     $ sfdx sobject:describe --sobject ApexCodeCoverage --use-tooling-api
 ```
 
-_See code: [src/commands/sobject/describe.ts](https://github.com/salesforcecli/plugin-schema/blob/2.3.32/src/commands/sobject/describe.ts)_
+_See code: [src/commands/sobject/describe.ts](https://github.com/salesforcecli/plugin-schema/blob/2.3.33/src/commands/sobject/describe.ts)_
 
 ## `sfdx sobject:list`
 
@@ -153,6 +153,6 @@ EXAMPLES
     $ sfdx sobject:list --sobject custom --target-org my-scratch-org
 ```
 
-_See code: [src/commands/sobject/list.ts](https://github.com/salesforcecli/plugin-schema/blob/2.3.32/src/commands/sobject/list.ts)_
+_See code: [src/commands/sobject/list.ts](https://github.com/salesforcecli/plugin-schema/blob/2.3.33/src/commands/sobject/list.ts)_
 
 <!-- commandsstop -->
