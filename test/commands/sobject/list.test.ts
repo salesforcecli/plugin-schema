@@ -4,13 +4,13 @@
  * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
-import * as os from 'node:os';
+import os from 'node:os';
 import { isString, AnyJson } from '@salesforce/ts-types';
-import { TestContext, MockTestOrgData, shouldThrow } from '@salesforce/core/lib/testSetup';
+import { TestContext, MockTestOrgData, shouldThrow } from '@salesforce/core/lib/testSetup.js';
 import { expect, assert } from 'chai';
 import { stubSfCommandUx } from '@salesforce/sf-plugins-core';
 import { SfError } from '@salesforce/core';
-import { SObjectList } from '../../../src/commands/sobject/list';
+import { SObjectList } from '../../../src/commands/sobject/list.js';
 
 describe('force:schema:sobject:list', () => {
   const $$ = new TestContext();

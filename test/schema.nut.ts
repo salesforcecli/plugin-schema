@@ -4,12 +4,12 @@
  * Licensed under the BSD 3-Clause license.
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
-import * as path from 'node:path';
+import path from 'node:path';
 import { strict as assert } from 'node:assert';
 import { expect } from 'chai';
 import { DescribeSObjectResult } from 'jsforce';
 import { TestSession, execCmd } from '@salesforce/cli-plugins-testkit';
-import { SObjectListResult } from '../src/commands/sobject/list';
+import { SObjectListResult } from '../src/commands/sobject/list.js';
 
 let session: TestSession;
 
