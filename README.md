@@ -70,16 +70,16 @@ sfdx plugins
 
 <!-- commands -->
 
-- [`sfdx sobject:describe`](#sfdx-sobjectdescribe)
-- [`sfdx sobject:list`](#sfdx-sobjectlist)
+- [`sf sobject describe`](#sf-sobject-describe)
+- [`sf sobject list`](#sf-sobject-list)
 
-## `sfdx sobject:describe`
+## `sf sobject describe`
 
 Display the metadata for a standard or custom object or a Tooling API object.
 
 ```
 USAGE
-  $ sfdx sobject:describe -o <value> -s <value> [--json] [--api-version <value>] [-t]
+  $ sf sobject describe -o <value> -s <value> [--json] [--api-version <value>] [-t]
 
 FLAGS
   -o, --target-org=<value>  (required) Username or alias of the target org.
@@ -100,31 +100,31 @@ DESCRIPTION
   a Tooling API object.
 
 ALIASES
-  $ sfdx force:schema:sobject:describe
+  $ sf force schema sobject describe
 
 EXAMPLES
   Display the metadata of the "Account" standard object in your default org:
 
-    $ sfdx sobject:describe --sobject Account
+    $ sf sobject describe --sobject Account
 
   Display the metadata of the "MyObject__c" custom object in the org with alias "my-scratch-org":
 
-    $ sfdx sobject:describe --sobject MyObject__c --target-org my-scratch-org
+    $ sf sobject describe --sobject MyObject__c --target-org my-scratch-org
 
   Display the metadata of the ApexCodeCoverage Tooling API object in your default org:
 
-    $ sfdx sobject:describe --sobject ApexCodeCoverage --use-tooling-api
+    $ sf sobject describe --sobject ApexCodeCoverage --use-tooling-api
 ```
 
-_See code: [src/commands/sobject/describe.ts](https://github.com/salesforcecli/plugin-schema/blob/2.3.33/src/commands/sobject/describe.ts)_
+_See code: [src/commands/sobject/describe.ts](https://github.com/salesforcecli/plugin-schema/blob/2.3.34/src/commands/sobject/describe.ts)_
 
-## `sfdx sobject:list`
+## `sf sobject list`
 
 List all Salesforce objects of a specified category.
 
 ```
 USAGE
-  $ sfdx sobject:list -o <value> [--json] [--api-version <value>] [-s <value>]
+  $ sf sobject list -o <value> [--json] [--api-version <value>] [-s <value>]
 
 FLAGS
   -o, --target-org=<value>  (required) Username or alias of the target org.
@@ -141,18 +141,18 @@ DESCRIPTION
   objects.
 
 ALIASES
-  $ sfdx force:schema:sobject:list
+  $ sf force schema sobject list
 
 EXAMPLES
   List all objects in your default org:
 
-    $ sfdx sobject:list --sobject all
+    $ sf sobject list --sobject all
 
   List only custom objects in the org with alias "my-scratch-org":
 
-    $ sfdx sobject:list --sobject custom --target-org my-scratch-org
+    $ sf sobject list --sobject custom --target-org my-scratch-org
 ```
 
-_See code: [src/commands/sobject/list.ts](https://github.com/salesforcecli/plugin-schema/blob/2.3.33/src/commands/sobject/list.ts)_
+_See code: [src/commands/sobject/list.ts](https://github.com/salesforcecli/plugin-schema/blob/2.3.34/src/commands/sobject/list.ts)_
 
 <!-- commandsstop -->

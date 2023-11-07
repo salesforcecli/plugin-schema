@@ -1,3 +1,5 @@
+## [3.0.1](https://github.com/salesforcecli/plugin-schema/compare/2.3.33...3.0.1) (2023-11-07)
+
 ## [2.3.33](https://github.com/salesforcecli/plugin-schema/compare/2.3.32...2.3.33) (2023-11-03)
 
 ### Bug Fixes
