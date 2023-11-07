@@ -5,10 +5,10 @@
  * For full license text, see LICENSE.txt file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 import { isString, AnyJson } from '@salesforce/ts-types';
-import { TestContext, MockTestOrgData } from '@salesforce/core/lib/testSetup';
+import { TestContext, MockTestOrgData } from '@salesforce/core/lib/testSetup.js';
 import { expect } from 'chai';
 import { stubSfCommandUx } from '@salesforce/sf-plugins-core';
-import { SObjectDescribe } from '../../../src/commands/sobject/describe';
+import { SObjectDescribe } from '../../../src/commands/sobject/describe.js';
 
 describe('force:schema:sobject:describe', () => {
   const $$ = new TestContext();
