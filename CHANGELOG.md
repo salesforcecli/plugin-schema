@@ -1,3 +1,9 @@
+## [3.0.4](https://github.com/salesforcecli/plugin-schema/compare/3.0.3...3.0.4) (2023-11-15)
+
+### Bug Fixes
+
+- **deps:** devScripts update ([#629](https://github.com/salesforcecli/plugin-schema/issues/629)) and core v6 ([40c032f](https://github.com/salesforcecli/plugin-schema/commit/40c032fa0e71eefe2d864e86bd815477ea9cb879))
+
 ## [3.0.3](https://github.com/salesforcecli/plugin-schema/compare/3.0.2...3.0.3) (2023-11-12)
 
 ### Bug Fixes
