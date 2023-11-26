@@ -82,7 +82,8 @@ USAGE
   $ sf sobject describe -o <value> -s <value> [--json] [--api-version <value>] [-t]
 
 FLAGS
-  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
   -s, --sobject=<value>      (required) API name of the object to describe.
   -t, --use-tooling-api      Use Tooling API to display metadata for Tooling API objects.
       --api-version=<value>  Override the api version used for api requests made by this command
@@ -116,7 +117,7 @@ EXAMPLES
     $ sf sobject describe --sobject ApexCodeCoverage --use-tooling-api
 ```
 
-_See code: [src/commands/sobject/describe.ts](https://github.com/salesforcecli/plugin-schema/blob/3.0.5/src/commands/sobject/describe.ts)_
+_See code: [src/commands/sobject/describe.ts](https://github.com/salesforcecli/plugin-schema/blob/3.0.6/src/commands/sobject/describe.ts)_
 
 ## `sf sobject list`
 
@@ -127,7 +128,8 @@ USAGE
   $ sf sobject list -o <value> [--json] [--api-version <value>] [-s <value>]
 
 FLAGS
-  -o, --target-org=<value>   (required) Username or alias of the target org.
+  -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
+                             configuration variable is already set.
   -s, --sobject=<value>      [default: ALL] Category of objects to list.
       --api-version=<value>  Override the api version used for api requests made by this command
 
@@ -153,6 +155,6 @@ EXAMPLES
     $ sf sobject list --sobject custom --target-org my-scratch-org
 ```
 
-_See code: [src/commands/sobject/list.ts](https://github.com/salesforcecli/plugin-schema/blob/3.0.5/src/commands/sobject/list.ts)_
+_See code: [src/commands/sobject/list.ts](https://github.com/salesforcecli/plugin-schema/blob/3.0.6/src/commands/sobject/list.ts)_
 
 <!-- commandsstop -->
