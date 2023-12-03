@@ -12,7 +12,7 @@
   "devDependencies": {
     "@oclif/plugin-command-snapshot": "^5.0.2",
     "@oclif/plugin-help": "^6.0.7",
-    "@salesforce/cli-plugins-testkit": "^5.0.5",
+    "@salesforce/cli-plugins-testkit": "^5.0.6",
     "@salesforce/dev-scripts": "^7.1.1",
     "@salesforce/plugin-command-reference": "^3.0.46",
     "eslint-plugin-sf-plugin": "^1.16.15",
