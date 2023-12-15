@@ -14,7 +14,7 @@ import {
 } from '@salesforce/sf-plugins-core';
 import type { AnyJson } from '@salesforce/ts-types';
 import { Messages } from '@salesforce/core';
-import { DescribeSObjectResult } from 'jsforce';
+import type { DescribeSObjectResult } from 'jsforce';
 
 Messages.importMessagesDirectoryFromMetaUrl(import.meta.url);
 const messages = Messages.loadMessages('@salesforce/plugin-schema', 'describe');
