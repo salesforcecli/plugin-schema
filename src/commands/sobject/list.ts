@@ -6,7 +6,6 @@
  */
 import os from 'node:os';
 
-
 import {
   SfCommand,
   Flags,
@@ -16,7 +15,7 @@ import {
 } from '@salesforce/sf-plugins-core';
 import { Messages } from '@salesforce/core';
 
-Messages.importMessagesDirectoryFromMetaUrl(import.meta.url)
+Messages.importMessagesDirectoryFromMetaUrl(import.meta.url);
 const messages = Messages.loadMessages('@salesforce/plugin-schema', 'list');
 
 export enum SObjectType {
@@ -32,6 +31,8 @@ export class SObjectList extends SfCommand<SObjectListResult> {
   public static readonly description = messages.getMessage('description');
   public static readonly examples = messages.getMessages('examples');
   public static readonly aliases = ['force:schema:sobject:list'];
+  public static readonly deprecateAliases = true;
+
   public static readonly flags = {
     'target-org': requiredOrgFlagWithDeprecations,
     'api-version': orgApiVersionFlagWithDeprecations,
