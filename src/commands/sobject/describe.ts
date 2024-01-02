@@ -24,6 +24,7 @@ export class SObjectDescribe extends SfCommand<DescribeSObjectResult> {
   public static readonly description = messages.getMessage('description');
   public static readonly examples = messages.getMessages('examples');
   public static readonly aliases = ['force:schema:sobject:describe'];
+  public static readonly deprecateAliases = true;
   public static readonly flags = {
     'target-org': requiredOrgFlagWithDeprecations,
     'api-version': orgApiVersionFlagWithDeprecations,
