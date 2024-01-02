@@ -1,3 +1,9 @@
+# [3.1.0](https://github.com/salesforcecli/plugin-schema/compare/3.0.10...3.1.0) (2024-01-02)
+
+### Features
+
+- deprecate aliases ([13782dc](https://github.com/salesforcecli/plugin-schema/commit/13782dc1d7354a857d61fac0406d9c73b9305f2b))
+
 ## [3.0.10](https://github.com/salesforcecli/plugin-schema/compare/3.0.9...3.0.10) (2023-12-17)
 
 ### Bug Fixes
