@@ -1691,10 +1691,10 @@
     node-gyp "^8.2.0"
     read-package-json-fast "^2.0.1"
 
-"@oclif/core@^3.15.1", "@oclif/core@^3.18.1", "@oclif/core@^3.18.2", "@oclif/core@^3.19.1":
-  version "3.19.1"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.19.1.tgz#18af989f4b086ba9b6dfac891fb27f8281664084"
-  integrity sha512-dd1h4Hz+LwpuYhKvgBjDmW3/HgUAm93JM95cnbzSv5VcmiBeC+utjLvY96PmPbYxxDoz7XazEOl8oOpSLSEgcg==
+"@oclif/core@^3.15.1", "@oclif/core@^3.18.2", "@oclif/core@^3.19.1", "@oclif/core@^3.19.2":
+  version "3.19.2"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-3.19.2.tgz#1672061e7309f0048f9f9991607b303a9e5082fc"
+  integrity sha512-/kUZZQZO92esToSTn+fnfMQdAj8uDJ/lsMNXBRBCiLQpwnIskHXy8JzYpynxxkzY2wbGREBceQhxCyDV0XpY4g==
   dependencies:
     "@types/cli-progress" "^3.11.5"
     ansi-escapes "^4.3.2"
@@ -1739,12 +1739,12 @@
     semver "^7.5.4"
     ts-json-schema-generator "^1.5.0"
 
-"@oclif/plugin-help@^6.0.12":
-  version "6.0.12"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-6.0.12.tgz#d71b84531644ecf65fcd8df671cff6f4aa178d42"
-  integrity sha512-KMxQ5Oli1tkWiWNSdrjNtiFIFZvX0+IsvuuGcDwJIn1Jm+SzEQF90vkK6WzIjFACmyKIwXbGMmimcFaLrslJPQ==
+"@oclif/plugin-help@^6.0.12", "@oclif/plugin-help@^6.0.13":
+  version "6.0.13"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-6.0.13.tgz#36e3eaeb5552b375d44630ef6abfb8a6b9ab7ba4"
+  integrity sha512-D/hiHmg+c6eOny95VfbhBcdgGxbi4AU2I3s1nFit0wpV2YziZnjmD7NQvYUCUJB052RcVmni6NiegttLgM4y5g==
   dependencies:
-    "@oclif/core" "^3.18.1"
+    "@oclif/core" "^3.19.2"
 
 "@oclif/plugin-not-found@^3.0.10":
   version "3.0.10"
