@@ -1,3 +1,9 @@
+## [3.1.8](https://github.com/salesforcecli/plugin-schema/compare/3.1.7...3.1.8) (2024-03-17)
+
+### Bug Fixes
+
+- **deps:** bump @oclif/core from 3.23.0 to 3.25.2 ([1db3b99](https://github.com/salesforcecli/plugin-schema/commit/1db3b99fe21dc2e95e9659d257546a79f842e95f))
+
 ## [3.1.7](https://github.com/salesforcecli/plugin-schema/compare/3.1.6...3.1.7) (2024-03-03)
 
 ### Bug Fixes
