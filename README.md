@@ -79,7 +79,7 @@ Display the metadata for a standard or custom object or a Tooling API object.
 
 ```
 USAGE
-  $ sf sobject describe -o <value> -s <value> [--json] [--api-version <value>] [-t]
+  $ sf sobject describe -o <value> -s <value> [--json] [--flags-dir <value>] [--api-version <value>] [-t]
 
 FLAGS
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
@@ -89,7 +89,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   Display the metadata for a standard or custom object or a Tooling API object.
@@ -125,7 +126,7 @@ List all Salesforce objects of a specified category.
 
 ```
 USAGE
-  $ sf sobject list -o <value> [--json] [--api-version <value>] [-s <value>]
+  $ sf sobject list -o <value> [--json] [--flags-dir <value>] [--api-version <value>] [-s <value>]
 
 FLAGS
   -o, --target-org=<value>   (required) Username or alias of the target org. Not required if the `target-org`
@@ -134,7 +135,8 @@ FLAGS
       --api-version=<value>  Override the api version used for api requests made by this command
 
 GLOBAL FLAGS
-  --json  Format output as json.
+  --flags-dir=<value>  Import flag values from a directory.
+  --json               Format output as json.
 
 DESCRIPTION
   List all Salesforce objects of a specified category.
