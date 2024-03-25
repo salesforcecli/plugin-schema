@@ -1,18 +1,18 @@
 [
   {
-    "command": "sobject:describe",
-    "plugin": "@salesforce/plugin-schema",
-    "flags": ["api-version", "json", "loglevel", "sobject", "target-org", "use-tooling-api"],
     "alias": ["force:schema:sobject:describe"],
+    "command": "sobject:describe",
+    "flagAliases": ["apiversion", "sobjecttype", "targetusername", "u", "usetoolingapi"],
     "flagChars": ["o", "s", "t"],
-    "flagAliases": ["apiversion", "sobjecttype", "targetusername", "u", "usetoolingapi"]
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "sobject", "target-org", "use-tooling-api"],
+    "plugin": "@salesforce/plugin-schema"
   },
   {
-    "command": "sobject:list",
-    "plugin": "@salesforce/plugin-schema",
-    "flags": ["api-version", "json", "loglevel", "sobject", "target-org"],
     "alias": ["force:schema:sobject:list"],
+    "command": "sobject:list",
+    "flagAliases": ["apiversion", "c", "sobjecttypecategory", "targetusername", "u"],
     "flagChars": ["o", "s"],
-    "flagAliases": ["apiversion", "c", "sobjecttypecategory", "targetusername", "u"]
+    "flags": ["api-version", "flags-dir", "json", "loglevel", "sobject", "target-org"],
+    "plugin": "@salesforce/plugin-schema"
   }
 ]
