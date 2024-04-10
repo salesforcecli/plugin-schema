@@ -6,7 +6,7 @@
  */
 import os from 'node:os';
 import { isString, type AnyJson } from '@salesforce/ts-types';
-import { TestContext, MockTestOrgData, shouldThrow } from '@salesforce/core/lib/testSetup.js';
+import { TestContext, MockTestOrgData, shouldThrow } from '@salesforce/core/testSetup';
 import { expect, assert } from 'chai';
 import { stubSfCommandUx } from '@salesforce/sf-plugins-core';
 import { SfError } from '@salesforce/core';
