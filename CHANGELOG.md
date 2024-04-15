@@ -1,3 +1,9 @@
+## [3.3.3](https://github.com/salesforcecli/plugin-schema/compare/3.3.2...3.3.3) (2024-04-15)
+
+### Bug Fixes
+
+- import stuff from jsforce-node ([#763](https://github.com/salesforcecli/plugin-schema/issues/763)) ([1550676](https://github.com/salesforcecli/plugin-schema/commit/1550676545016589ab2f314315356a0e0ba83f89))
+
 ## [3.3.2](https://github.com/salesforcecli/plugin-schema/compare/3.3.1...3.3.2) (2024-04-14)
 
 ### Bug Fixes
