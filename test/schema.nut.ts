@@ -7,7 +7,7 @@
 import path from 'node:path';
 import { strict as assert } from 'node:assert';
 import { expect } from 'chai';
-import type { DescribeSObjectResult } from 'jsforce';
+import type { DescribeSObjectResult } from '@jsforce/jsforce-node';
 import { TestSession, execCmd } from '@salesforce/cli-plugins-testkit';
 import { SObjectListResult } from '../src/commands/sobject/list.js';
 
