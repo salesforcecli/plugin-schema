@@ -1,3 +1,9 @@
+## [3.3.26](https://github.com/salesforcecli/plugin-schema/compare/3.3.25...3.3.26) (2024-08-26)
+
+### Bug Fixes
+
+- **deps:** bump @salesforce/sf-plugins-core from 11.3.3 to 11.3.6 ([f4c5591](https://github.com/salesforcecli/plugin-schema/commit/f4c559192f6fdd71bae95eb16a23309f2caeb60d))
+
 ## [3.3.25](https://github.com/salesforcecli/plugin-schema/compare/3.3.24...3.3.25) (2024-08-25)
 
 ### Bug Fixes
