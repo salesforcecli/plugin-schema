@@ -1577,13 +1577,13 @@
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/plugin-command-snapshot@^5.2.34":
-  version "5.2.34"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-command-snapshot/-/plugin-command-snapshot-5.2.34.tgz#c0fb2b61ee9583c0ae8f0ee3ff25ca4b09285b36"
-  integrity sha512-SsDJ0IweYvZezlaQ87Pela7UY+uLuDaP7ajdzfaRqsRiHYm4Uya6ALnXm3H+D5AcmHpRfoLRtqQtMCN3dMhUfA==
+"@oclif/plugin-command-snapshot@^5.2.35":
+  version "5.2.35"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-command-snapshot/-/plugin-command-snapshot-5.2.35.tgz#19eacd8180772d9f172606edf3d6c99522fecbb3"
+  integrity sha512-8A7iJ7tg2ZvyMG63sBOvdPIPq7RmggIdeACA0p6NfwzDI9mRL94v78m/6whqJKTUuzcERIIO+L2hwxPbBKwdGw==
   dependencies:
     "@oclif/core" "^4"
-    ansis "^3.10.0"
+    ansis "^3.14.0"
     globby "^14.1.0"
     just-diff "^5.2.0"
     lodash.difference "^4.5.0"
@@ -2843,7 +2843,7 @@ ansi-styles@^6.1.0, ansi-styles@^6.2.1:
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-6.2.1.tgz#0e62320cf99c21afff3b3012192546aacbfb05c5"
   integrity sha512-bN798gFfQX+viw3R7yrGWRqnrN2oRkEkUjjl4JNn4E8GxxbjtG3FbrEIIY3l8/hrwUwIeCZvi4QuOTP4MErVug==
 
-ansis@^3.10.0, ansis@^3.16.0, ansis@^3.3.2, ansis@^3.5.2:
+ansis@^3.14.0, ansis@^3.16.0, ansis@^3.3.2, ansis@^3.5.2:
   version "3.16.0"
   resolved "https://registry.yarnpkg.com/ansis/-/ansis-3.16.0.tgz#5e365fd173133756a01199c77fc9146bb22fb5eb"
   integrity sha512-sU7d/tfZiYrsIAXbdL/CNZld5bCkruzwT5KmqmadCJYxuLxHAOBjidxD5+iLmN/6xEfjcQq1l7OpsiCBlc4LzA==
