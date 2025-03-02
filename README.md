@@ -118,7 +118,7 @@ EXAMPLES
     $ sf sobject describe --sobject ApexCodeCoverage --use-tooling-api
 ```
 
-_See code: [src/commands/sobject/describe.ts](https://github.com/salesforcecli/plugin-schema/blob/3.3.52/src/commands/sobject/describe.ts)_
+_See code: [src/commands/sobject/describe.ts](https://github.com/salesforcecli/plugin-schema/blob/3.3.53/src/commands/sobject/describe.ts)_
 
 ## `sf sobject list`
 
@@ -157,6 +157,6 @@ EXAMPLES
     $ sf sobject list --sobject custom --target-org my-scratch-org
 ```
 
-_See code: [src/commands/sobject/list.ts](https://github.com/salesforcecli/plugin-schema/blob/3.3.52/src/commands/sobject/list.ts)_
+_See code: [src/commands/sobject/list.ts](https://github.com/salesforcecli/plugin-schema/blob/3.3.53/src/commands/sobject/list.ts)_
 
 <!-- commandsstop -->
