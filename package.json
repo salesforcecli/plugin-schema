@@ -1,7 +1,7 @@
 {
   "name": "@salesforce/plugin-schema",
   "description": "Commands to interact with salesforce sobject schemas",
-  "version": "3.3.88",
+  "version": "3.3.89",
   "author": "Salesforce",
   "bugs": "https://github.com/forcedotcom/cli/issues",
   "dependencies": {
