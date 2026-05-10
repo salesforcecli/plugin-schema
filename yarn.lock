@@ -1710,10 +1710,10 @@
     wordwrap "^1.0.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/plugin-command-snapshot@^5.3.16":
-  version "5.3.16"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-command-snapshot/-/plugin-command-snapshot-5.3.16.tgz#d4d45298a8be71c20ba8b6a850edc82b31000184"
-  integrity sha512-pwTKWQRDrK9eOz1VVUTKm9q3tKf9Kihunu3R53LfcPXPpEhIJ6N+2zmCYqeuifrvjBqLT1VhAKpVgTfHXxURHg==
+"@oclif/plugin-command-snapshot@^5.3.18":
+  version "5.3.18"
+  resolved "https://registry.yarnpkg.com/@oclif/plugin-command-snapshot/-/plugin-command-snapshot-5.3.18.tgz#ed987b0a85431a583880073d9f3bda51197acc8a"
+  integrity sha512-OoJQNCZaNuu3N6Pf042BfKDcP6dG6xnLWQk8ADV7JmkIz5Bt4jNLtQx8Xs1cP0m+rxS8l5LYENBBZqdR8E+uhw==
   dependencies:
     "@oclif/core" "^4"
     ansis "^3.17.0"
@@ -1722,7 +1722,7 @@
     lodash.difference "^4.5.0"
     lodash.get "^4.4.2"
     lodash.sortby "^4.7.0"
-    semver "^7.7.4"
+    semver "^7.8.0"
     ts-json-schema-generator "^1.5.1"
 
 "@oclif/plugin-help@^6.2.38", "@oclif/plugin-help@^6.2.48":
@@ -6935,10 +6935,10 @@ semver@^6.0.0, semver@^6.3.1:
   resolved "https://registry.yarnpkg.com/semver/-/semver-6.3.1.tgz#556d2ef8689146e46dcea4bfdd095f3434dffcb4"
   integrity sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==
 
-semver@^7.3.4, semver@^7.3.5, semver@^7.5.4, semver@^7.6.0, semver@^7.7.3, semver@^7.7.4:
-  version "7.7.4"
-  resolved "https://registry.yarnpkg.com/semver/-/semver-7.7.4.tgz#28464e36060e991fa7a11d0279d2d3f3b57a7e8a"
-  integrity sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA==
+semver@^7.3.4, semver@^7.3.5, semver@^7.5.4, semver@^7.6.0, semver@^7.7.3, semver@^7.7.4, semver@^7.8.0:
+  version "7.8.0"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-7.8.0.tgz#ed0661039fcbcda2ce71f01fa6adbefaa77040df"
+  integrity sha512-AcM7dV/5ul4EekoQ29Agm5vri8JNqRyj39o0qpX6vDF2GZrtutZl5RwgD1XnZjiTAfncsJhMI48QQH3sN87YNA==
 
 sentence-case@^3.0.4:
   version "3.0.4"
