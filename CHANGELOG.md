@@ -1,3 +1,10 @@
+## [3.3.112](https://github.com/salesforcecli/plugin-schema/compare/3.3.111...3.3.112) (2026-05-13)
+
+### Bug Fixes
+
+- bumped dependency on sf-plugins-core to 12.x @W-22477677@ ([34d082e](https://github.com/salesforcecli/plugin-schema/commit/34d082ec464b35f95250decbd0183a47ccfcf5cf))
+- clarified sf-plugins-core dependency @W-22477677@ ([fbf3560](https://github.com/salesforcecli/plugin-schema/commit/fbf35609d95e35c8791b814e9cfa318207468e61))
+
 ## [3.3.111](https://github.com/salesforcecli/plugin-schema/compare/3.3.110...3.3.111) (2026-05-11)
 
 ### Bug Fixes
