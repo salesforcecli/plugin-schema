@@ -939,15 +939,6 @@
     "@inquirer/core" "^10.3.2"
     "@inquirer/type" "^3.0.10"
 
-"@inquirer/password@^2.2.0":
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/@inquirer/password/-/password-2.2.0.tgz#0b6f26336c259c8a9e5f5a3f2e1a761564f764ba"
-  integrity sha512-5otqIpgsPYIshqhgtEwSspBQE40etouR8VIxzpJkv9i0dVHIpyhiivbkH9/dGiMLdyamT54YRdGJLfl8TFnLHg==
-  dependencies:
-    "@inquirer/core" "^9.1.0"
-    "@inquirer/type" "^1.5.3"
-    ansi-escapes "^4.3.2"
-
 "@inquirer/password@^4.0.23":
   version "4.0.23"
   resolved "https://registry.yarnpkg.com/@inquirer/password/-/password-4.0.23.tgz#b9f5187c8c92fd7aa9eceb9d8f2ead0d7e7b000d"
@@ -1200,7 +1191,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@oclif/core@^4", "@oclif/core@^4.0.27", "@oclif/core@^4.11.2":
+"@oclif/core@^4", "@oclif/core@^4.11.2":
   version "4.11.2"
   resolved "https://registry.yarnpkg.com/@oclif/core/-/core-4.11.2.tgz#c8062fc16f0d82c247f60670364026483a48d522"
   integrity sha512-LWDalCgy+hYyAkLa9sMIXMXk6ws5RzQhVnkmfXtVIIyEEYigbXQ/9/x+s76p53MiXxNc6SJB7lfwkPF+SdzfMQ==
@@ -1326,7 +1317,7 @@
     strip-ansi "6.0.1"
     ts-retry-promise "^0.8.1"
 
-"@salesforce/core@^8.23.1", "@salesforce/core@^8.28.4", "@salesforce/core@^8.29.0", "@salesforce/core@^8.30.3", "@salesforce/core@^8.5.1":
+"@salesforce/core@^8.23.1", "@salesforce/core@^8.29.0", "@salesforce/core@^8.30.3":
   version "8.30.3"
   resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.30.3.tgz#333315e9c0436abd2247df7b5b31375df4002cd6"
   integrity sha512-E3WPXxAEqvpZXp6nnkkoNRFGQ2c/5Mhnbl9s0ajQiLTpqQ1Una5PlPu0s2rRvu8qGKnT1AI7xT3RDy3pd/dULg==
@@ -1395,15 +1386,15 @@
   dependencies:
     "@salesforce/ts-types" "^2.0.12"
 
-"@salesforce/plugin-command-reference@^3.1.97":
-  version "3.1.97"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-command-reference/-/plugin-command-reference-3.1.97.tgz#eacae5b59fb1c7c58cccb8bf7ab3a796db9aa571"
-  integrity sha512-qBe36iD/LxWeHIEqBXccYNwrUoeSQhGVIxG59+qGGipm7eUfP/DdFBV7DtZpT8oiXmmVXre1nCeTALWIDETdcg==
+"@salesforce/plugin-command-reference@^3.1.102":
+  version "3.1.102"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-command-reference/-/plugin-command-reference-3.1.102.tgz#ecff04d8933abdd867f3f551863bcc248806c52c"
+  integrity sha512-rqzHD452YDPDPqRKicm5ci0+yrsK9zy9Us/1tKIbZBuqJRp6yFDprbyh+4rNrbFEP3qxuyRjSWHRt8QN9ox6dA==
   dependencies:
     "@oclif/core" "^4"
-    "@salesforce/core" "^8.28.4"
+    "@salesforce/core" "^8.30.3"
     "@salesforce/kit" "^3.2.6"
-    "@salesforce/sf-plugins-core" "^11.3.12"
+    "@salesforce/sf-plugins-core" "^12.2.16"
     "@salesforce/ts-types" "^2.0.11"
     chalk "^5.6.2"
     debug "^4.4.3"
@@ -1413,24 +1404,6 @@
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/@salesforce/prettier-config/-/prettier-config-0.0.3.tgz#ba648d4886bb38adabe073dbea0b3a91b3753bb0"
   integrity sha512-hYOhoPTCSYMDYn+U1rlEk16PoBeAJPkrdg4/UtAzupM1mRRJOwEPMG1d7U8DxJFKuXW3DMEYWr2MwAIBDaHmFg==
-
-"@salesforce/sf-plugins-core@^11.3.12":
-  version "11.3.12"
-  resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-11.3.12.tgz#18b3a553688428bcffea9d36abc72847497f06ae"
-  integrity sha512-hi8EcSoRHRxj4sm/V5YDtzq9bPr/cKpM4fC6abo/jRzpXygwizinc2gVQkXfVdhjK7NGMskVRQB1N+0TThG7bA==
-  dependencies:
-    "@inquirer/confirm" "^3.1.22"
-    "@inquirer/password" "^2.2.0"
-    "@oclif/core" "^4.0.27"
-    "@salesforce/core" "^8.5.1"
-    "@salesforce/kit" "^3.2.3"
-    "@salesforce/ts-types" "^2.0.12"
-    ansis "^3.3.2"
-    cli-progress "^3.12.0"
-    natural-orderby "^3.0.2"
-    slice-ansi "^7.1.0"
-    string-width "^7.2.0"
-    terminal-link "^3.0.0"
 
 "@salesforce/sf-plugins-core@^12.2.16":
   version "12.2.16"
@@ -6483,7 +6456,7 @@ string-width@^5.0.1, string-width@^5.1.2:
     emoji-regex "^9.2.2"
     strip-ansi "^7.0.1"
 
-string-width@^7.0.0, string-width@^7.2.0:
+string-width@^7.0.0:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-7.2.0.tgz#b5bb8e2165ce275d4d43476dd2700ad9091db6dc"
   integrity sha512-tsaTIkKW9b4N+AEj+SVA+WhJzV7/zMhcSu78mLKWSk7cXMOSHsBKFWUs0fWwq8QyK3MgJBQRX6Gbi4kYbdvGkQ==
