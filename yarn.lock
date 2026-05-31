@@ -1496,10 +1496,10 @@
     strip-ansi "6.0.1"
     ts-retry-promise "^0.8.1"
 
-"@salesforce/core@^8.23.1", "@salesforce/core@^8.30.0", "@salesforce/core@^8.30.3":
-  version "8.30.4"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.30.4.tgz#4a92d25d337a74798414692432bcce144adc42e6"
-  integrity sha512-lMX+X87HbelGU9IA3IOHdP0CDcru1kQG4qDDJXoDYSp8MAcvJpNdOk6P06SutMqKv39XVS3VRfKL5lGiuRcDnA==
+"@salesforce/core@^8.23.1", "@salesforce/core@^8.30.0", "@salesforce/core@^8.30.3", "@salesforce/core@^8.31.0":
+  version "8.31.0"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.31.0.tgz#153beb193af8fce73d31cc39afee794c4c1ee1c0"
+  integrity sha512-TXQoR7Bs0Dk5AuNY8eaNRhMeLDLcpJ8su7LVxn7VVfnRxITrRh4gkSuOAXdBKAqx0WcjRONDs1twedaOE7Xu4Q==
   dependencies:
     "@jsforce/jsforce-node" "^3.10.13"
     "@salesforce/kit" "^3.2.4"
@@ -1565,15 +1565,15 @@
   dependencies:
     "@salesforce/ts-types" "^2.0.12"
 
-"@salesforce/plugin-command-reference@^3.1.102":
-  version "3.1.102"
-  resolved "https://registry.yarnpkg.com/@salesforce/plugin-command-reference/-/plugin-command-reference-3.1.102.tgz#ecff04d8933abdd867f3f551863bcc248806c52c"
-  integrity sha512-rqzHD452YDPDPqRKicm5ci0+yrsK9zy9Us/1tKIbZBuqJRp6yFDprbyh+4rNrbFEP3qxuyRjSWHRt8QN9ox6dA==
+"@salesforce/plugin-command-reference@^3.1.106":
+  version "3.1.106"
+  resolved "https://registry.yarnpkg.com/@salesforce/plugin-command-reference/-/plugin-command-reference-3.1.106.tgz#4497cfeee718d6f1a873902f2ba931ea809ab028"
+  integrity sha512-6mbePnirGutgEc9q5nlzS6OV3D+cx/EMbiJ0mylTCUUDhDA8BOk1XXGUgw4Yfv7gqZNZVwuKwAGMV8UOuuMJtw==
   dependencies:
     "@oclif/core" "^4"
-    "@salesforce/core" "^8.30.3"
+    "@salesforce/core" "^8.31.0"
     "@salesforce/kit" "^3.2.6"
-    "@salesforce/sf-plugins-core" "^12.2.16"
+    "@salesforce/sf-plugins-core" "^12.2.17"
     "@salesforce/ts-types" "^2.0.11"
     chalk "^5.6.2"
     debug "^4.4.3"
@@ -1584,7 +1584,7 @@
   resolved "https://registry.yarnpkg.com/@salesforce/prettier-config/-/prettier-config-0.0.3.tgz#ba648d4886bb38adabe073dbea0b3a91b3753bb0"
   integrity sha512-hYOhoPTCSYMDYn+U1rlEk16PoBeAJPkrdg4/UtAzupM1mRRJOwEPMG1d7U8DxJFKuXW3DMEYWr2MwAIBDaHmFg==
 
-"@salesforce/sf-plugins-core@^12.2.16", "@salesforce/sf-plugins-core@^12.2.17":
+"@salesforce/sf-plugins-core@^12.2.17":
   version "12.2.17"
   resolved "https://registry.yarnpkg.com/@salesforce/sf-plugins-core/-/sf-plugins-core-12.2.17.tgz#a35d1f917122d377feae083bff6d6b816e3d1e34"
   integrity sha512-a8wHzT4IPUxvqUcguTd6wXp4C7R2i+HTjjiCBNNEqL5/OFXmROlttalgxFceRsnfoi2Sq9jYuVIVWHOs43uEWQ==
