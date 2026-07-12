@@ -9,7 +9,7 @@
   "dependencies": {
     "@oclif/core": "^4",
     "@salesforce/core": "^8.32.2",
-    "@salesforce/sf-plugins-core": "^12.2.25"
+    "@salesforce/sf-plugins-core": "^12.2.26"
   },
   "devDependencies": {
     "@oclif/plugin-command-snapshot": "^5.3.30",
