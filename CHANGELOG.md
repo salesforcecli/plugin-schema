@@ -1,3 +1,11 @@
+# [4.0.0](https://github.com/salesforcecli/plugin-schema/compare/3.3.131...4.0.0) (2026-07-30)
+
+- feat!: require Node >=22, drop EOL Node versions @W-23480655@ ([8d25fff](https://github.com/salesforcecli/plugin-schema/commit/8d25fff6fc8a86bf840eda55514bfc6a23d7e01f))
+
+### BREAKING CHANGES
+
+- engines.node raised to >=22.0.0, dropping support for Node 18 and 20
+
 ## [3.3.131](https://github.com/salesforcecli/plugin-schema/compare/3.3.130...3.3.131) (2026-07-26)
 
 ### Bug Fixes
