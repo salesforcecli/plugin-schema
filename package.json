@@ -16,7 +16,7 @@
     "@oclif/plugin-help": "^7.0.0",
     "@salesforce/cli-plugins-testkit": "^5.3.64",
     "@salesforce/dev-scripts": "^14.0.0",
-    "@salesforce/plugin-command-reference": "^3.1.131",
+    "@salesforce/plugin-command-reference": "^3.1.133",
     "@salesforce/ts-types": "^3.0.1",
     "@types/chai": "^4.3.17",
     "@types/mocha": "^10.0.10",
