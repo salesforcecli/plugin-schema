@@ -1,3 +1,9 @@
+## [4.0.14](https://github.com/salesforcecli/plugin-schema/compare/4.0.13...4.0.14) (2026-10-25)
+
+### Bug Fixes
+
+- **deps:** bump undici from 8.11.2 to 8.12.3 ([efec7ee](https://github.com/salesforcecli/plugin-schema/commit/efec7ee0e07664f9a8c3f69a43c24c9648624992))
+
 ## [4.0.13](https://github.com/salesforcecli/plugin-schema/compare/4.0.12...4.0.13) (2026-10-22)
 
 ### Bug Fixes
