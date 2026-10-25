@@ -1,3 +1,9 @@
+## [4.0.16](https://github.com/salesforcecli/plugin-schema/compare/4.0.15...4.0.16) (2026-10-25)
+
+### Bug Fixes
+
+- **deps:** bump zod from 4.5.4 to 4.6.7 ([9de0317](https://github.com/salesforcecli/plugin-schema/commit/9de03171278faf9275c4ab5e9b6b1b9910636fa2))
+
 ## [4.0.15](https://github.com/salesforcecli/plugin-schema/compare/4.0.14...4.0.15) (2026-10-25)
 
 ### Bug Fixes
