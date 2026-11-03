@@ -4,14 +4,14 @@
 
 Commands to interact with salesforce sobject schemas
 
-This plugin is bundled with the [Salesforce CLI](https://developer.salesforce.com/tools/sfdxcli). For more information on the CLI, read the [getting started guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm).
+This plugin is bundled with the [Salesforce CLI](https://developer.salesforce.com/tools/salesforcecli). For more information on the CLI, read the [getting started guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm).
 
 We always recommend using the latest version of these commands bundled with the CLI, however, you can install a specific version or tag if needed.
 
 ## Install
 
 ```bash
-sfdx plugins install schema@x.y.z
+sf plugins install schema@x.y.z
 ```
 
 ## Issues
@@ -31,8 +31,7 @@ To build the plugin locally, make sure to have yarn installed and run the follow
 git clone git@github.com:salesforcecli/plugin-schema
 
 # Install the dependencies and compile
-yarn install
-yarn build
+yarn && yarn build
 ```
 
 To use your plugin, run using the local `./bin/dev.js` or `./bin/dev.cmd` file.
@@ -45,10 +44,10 @@ To use your plugin, run using the local `./bin/dev.js` or `./bin/dev.cmd` file.
 There should be no differences when running via the Salesforce CLI or using the local run file. However, it can be useful to link the plugin to do some additional testing or run your commands from anywhere on your machine.
 
 ```bash
-# Link your plugin to the sfdx cli
-sfdx plugins link .
+# Link your plugin to the sf cli
+sf plugins link .
 # To verify
-sfdx plugins
+sf plugins
 ```
 
 ## Commands
